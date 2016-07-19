@@ -1,0 +1,19 @@
+//misc settings
+@import 'config/_settings';
+@import 'config/_mixins';
+
+//frameworks
+@import 'owl-carousel/owl.carousel';
+
+//global things
+@import 'general/_reset';
+@import 'layout/_main';
+@import 'layout/_header';
+@import 'general/_typograph';
+
+@import 'sprite';
+
+@import 'stylesheets/_bootstrap';
+
+//pages
+

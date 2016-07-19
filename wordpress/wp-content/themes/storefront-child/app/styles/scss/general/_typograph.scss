@@ -1,0 +1,29 @@
+@font-face {
+	font-family: 'Helvetica Neue';
+	src: url('../fonts/hinted-HelveticaNeue.eot');
+	src: url('../fonts/hinted-HelveticaNeue.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/hinted-HelveticaNeue.woff2') format('woff2'),
+		url('../fonts/hinted-HelveticaNeue.woff') format('woff'),
+		url('../fonts/hinted-HelveticaNeue.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'HelveNueThin';
+	src: url('../fonts/HelveNueThin.eot');
+	src: url('../fonts/HelveNueThin.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/HelveNueThin.woff2') format('woff2'),
+		url('../fonts/HelveNueThin.woff') format('woff'),
+		url('../fonts/HelveNueThin.ttf') format('truetype');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: 'hugs_and_kisses_xoxo_demoRg';
+    src: url('../fonts/hugs__kisses_xoxo_demo-webfont.woff2') format('woff2'),
+         url('../fonts/hugs__kisses_xoxo_demo-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
