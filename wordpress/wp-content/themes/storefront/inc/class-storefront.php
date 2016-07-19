@@ -28,8 +28,8 @@ if ( ! class_exists( 'Storefront' ) ) :
 		public function __construct() {
 			add_action( 'after_setup_theme',     array( $this, 'setup' ) );
 			add_action( 'widgets_init',          array( $this, 'widgets_init' ) );
-			add_action( 'wp_enqueue_scripts',    array( $this, 'scripts' ),       10 );
-			add_action( 'wp_enqueue_scripts',    array( $this, 'child_scripts' ), 30 ); // After WooCommerce.
+			//add_action( 'wp_enqueue_scripts',    array( $this, 'scripts' ),       10 );
+		    //add_action( 'wp_enqueue_scripts',    array( $this, 'child_scripts' ), 30 ); // After WooCommerce.
 			add_filter( 'body_class',            array( $this, 'body_classes' ) );
 			add_filter( 'wp_page_menu_args',     array( $this, 'page_menu_args' ) );
 			add_action( 'enqueue_embed_scripts', array( $this, 'print_embed_styles' ) );
@@ -155,8 +155,8 @@ if ( ! class_exists( 'Storefront' ) ) :
 					'description' 		=> sprintf( __( 'Widgetized Footer Region %d.', 'storefront' ), $i ),
 					'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 					'after_widget' 		=> '</aside>',
-					'before_title' 		=> '<h3>',
-					'after_title' 		=> '</h3>',
+					'before_title' 		=> '<h3><span>',
+					'after_title' 		=> '</span></h3>',
 					)
 				);
 			}
