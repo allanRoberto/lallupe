@@ -19,21 +19,20 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 
 .sprite {
   background-image: url(../images/sprite.png);
-  display: inline-block;
 }
 
 .icon-arrow-blue-left {
-  background-position: -435px -308px;
+  background-position: -523px -308px;
   width: 43px;
   height: 41px;
 }
 .icon-arrow-blue-right {
-  background-position: -684px -224px;
+  background-position: -480px -308px;
   width: 43px;
   height: 41px;
 }
 .icon-arrow-left {
-  background-position: -519px -308px;
+  background-position: -607px -308px;
   width: 41px;
   height: 41px;
 }
@@ -43,7 +42,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   height: 68px;
 }
 .icon-arrow-right {
-  background-position: -478px -308px;
+  background-position: -566px -308px;
   width: 41px;
   height: 41px;
 }
@@ -58,7 +57,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   height: 75px;
 }
 .icon-cart-hover {
-  background-position: -594px -224px;
+  background-position: -435px -308px;
   width: 45px;
   height: 46px;
 }
@@ -77,13 +76,18 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   width: 391px;
   height: 154px;
 }
+.icon-delete-product {
+  background-position: -594px -224px;
+  width: 57px;
+  height: 56px;
+}
 .icon-header-cart {
   background-position: -645px -154px;
   width: 58px;
   height: 58px;
 }
 .icon-header-email {
-  background-position: -617px -308px;
+  background-position: -696px -248px;
   width: 26px;
   height: 17px;
 }
@@ -108,17 +112,17 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   height: 70px;
 }
 .icon-header-phone {
-  background-position: -390px -354px;
+  background-position: -683px -308px;
   width: 15px;
   height: 22px;
 }
 .icon-header-search {
-  background-position: -560px -308px;
+  background-position: -648px -308px;
   width: 35px;
   height: 35px;
 }
 .icon-header-twitter {
-  background-position: -595px -308px;
+  background-position: -696px -224px;
   width: 22px;
   height: 24px;
 }
@@ -133,7 +137,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   height: 131px;
 }
 .icon-view-product {
-  background-position: -639px -224px;
+  background-position: -651px -224px;
   width: 45px;
   height: 46px;
 }

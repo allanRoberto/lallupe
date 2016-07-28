@@ -7,9 +7,14 @@
 
 //global things
 @import 'general/_reset';
+@import 'general/_typograph';
+
+
 @import 'layout/_main';
 @import 'layout/_header';
-@import 'general/_typograph';
+@import 'layout/_product';
+@import 'layout/_cart';
+@import 'layout/_footer';
 
 @import 'sprite';
 

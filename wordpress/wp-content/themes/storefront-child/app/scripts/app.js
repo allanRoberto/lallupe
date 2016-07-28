@@ -5537,6 +5537,8 @@ d.parent(".dropdown-menu").length&&(d=d.closest("li.dropdown").addClass("active"
 
 	  $(".carousel-products .products").addClass('owl-carousel');
 
+	  $(".single-product .related .products").addClass('owl-carousel');
+
 	  $(".owl-carousel").owlCarousel({
 	  	center: true,
 	    items:5,

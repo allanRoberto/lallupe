@@ -4,6 +4,8 @@
 
 	  $(".carousel-products .products").addClass('owl-carousel');
 
+	  $(".single-product .related .products").addClass('owl-carousel');
+
 	  $(".owl-carousel").owlCarousel({
 	  	center: true,
 	    items:5,

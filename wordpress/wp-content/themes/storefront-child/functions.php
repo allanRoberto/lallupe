@@ -4,8 +4,61 @@ require_once('includes/menu_class.php');
 add_action('storefront_child_cart_header', 'storefront_child_header_cart', 60 );
 add_action( 'storefront_child_search_header', 'storefront_product_search', 40 );
 
+/**
+			 * woocommerce_single_product_summary hook.
+			 *
+			 * @hooked woocommerce_template_single_title - 5
+			 * @hooked woocommerce_template_single_rating - 10
+			 * @hooked woocommerce_template_single_price - 10
+			 * @hooked woocommerce_template_single_excerpt - 20
+			 * @hooked woocommerce_template_single_add_to_cart - 30
+			 * @hooked woocommerce_template_single_meta - 40
+			 * @hooked woocommerce_template_single_sharing - 50
+			 */
+
 remove_action( 'storefront_footer', 'storefront_credit', 50);
 
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
+
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sku', 10);
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_header_delivery', 21 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 22 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_info_delivery', 35 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 45 );
+
+add_filter( 'woocommerce_get_price_html', 'custom_cents_price_html', 100, 2 );
+function custom_cents_price_html( $price, $product ){
+    return '' . str_replace( ',', '<span class="cents">,', $price );
+}
+
+function woocommerce_template_single_sku(){
+	global $product;
+	echo '<div class="sku-title">Ref. ' . $product->sku . '</div>';
+}
+
+function woocommerce_template_header_delivery() {
+	echo '<div class="info-delivery">
+		<p class="col-md-8 col-md-offset-4 title-delivery">Frete grátis na compra de 2 capinhas ou mais !</p>
+		<div class="col-md-4">';
+}
+
+
+function woocommerce_template_info_delivery(){
+	global $product;
+	echo '</div>
+			<p class="col-md-8 description-delivery">Prazo de Envio: 7 dias úteis + o prazo dos correios. Basta selecionar o modelo de seu smartphone abaixo selecionar a quantidade desejada e finalizar a compra.</p>
+		</div>';
+}
 
 if ( ! function_exists( 'storefront_header_cart' ) ) {
 	
@@ -51,6 +104,8 @@ function lallupe_scripts() {
 	wp_enqueue_script( 'app', $template_url."/app/scripts/app.js", array(), '1.0', true );
 
 	wp_enqueue_script( 'owl-carousel', $template_url."/app/scripts/src/owl.carousel.min.js", array(), '1.0', true );
+
+	wp_dequeue_style("storefront-woocommerce-style");
 }
 
 add_action( 'wp_enqueue_scripts', 'lallupe_scripts' );
