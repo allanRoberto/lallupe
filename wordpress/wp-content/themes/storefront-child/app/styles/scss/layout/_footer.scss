@@ -1,5 +1,5 @@
 .site-footer {
-	background : #2FB3AC;
+	background : #6bb1ab;
 	padding-bottom : 40px;
 }
 
@@ -31,7 +31,7 @@
 		font-family: 'hugs_and_kisses_xoxo_demoRg'; 
 		color : #fff;
 		font-size : 26px;
-		background : #2FB3AC;
+		background : #6bb1ab;
 	}
 
 	.site-footer .widget h3:before {
@@ -46,7 +46,7 @@
 	}
 
 	.site-footer .widget h3 span {
-		background: #2FB3AC;
+		background: #6bb1ab;
 	    display: inline-block;
 	    position: relative;
 	    padding: 0 0 0 15px;
@@ -73,6 +73,37 @@
 		color : #fff; 
 		list-style: none;
 	}
+
+	.site-footer .menu li:before  {
+		content: "";
+	    background: #fff;
+	    width: 4px;
+	    height: 4px;
+	    display: inline-block;
+	    margin-right: 6px;
+	    top: -4px;
+	    position: relative;
+	    border-radius: 50px;
+
+	}
+	
+	.site-footer #nav_menu-3 li:before {
+		content : none !important;
+	}
+
+	.site-footer #nav_menu-3 li:after  {
+		content: "";
+	    background: #fff;
+	    width: 4px;
+	    height: 4px;
+	    display: inline-block;
+	    margin-left: 6px;
+	    top: -4px;
+	    position: relative;
+	    border-radius: 50px;
+
+	}
+
 	.site-footer .menu li a {
 		color : #fff;
 		text-transform: uppercase;

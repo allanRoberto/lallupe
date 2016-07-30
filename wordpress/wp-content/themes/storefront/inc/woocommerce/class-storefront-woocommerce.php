@@ -48,7 +48,7 @@ if ( ! class_exists( 'Storefront_WooCommerce' ) ) :
 		 * @since  1.0.0
 		 */
 		public function loop_columns() {
-			return apply_filters( 'storefront_loop_columns', 3 ); // 3 products per row
+			return apply_filters( 'storefront_loop_columns', 5 ); // 3 products per row
 		}
 
 		/**

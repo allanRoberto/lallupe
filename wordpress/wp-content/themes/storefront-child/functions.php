@@ -4,17 +4,6 @@ require_once('includes/menu_class.php');
 add_action('storefront_child_cart_header', 'storefront_child_header_cart', 60 );
 add_action( 'storefront_child_search_header', 'storefront_product_search', 40 );
 
-/**
-			 * woocommerce_single_product_summary hook.
-			 *
-			 * @hooked woocommerce_template_single_title - 5
-			 * @hooked woocommerce_template_single_rating - 10
-			 * @hooked woocommerce_template_single_price - 10
-			 * @hooked woocommerce_template_single_excerpt - 20
-			 * @hooked woocommerce_template_single_add_to_cart - 30
-			 * @hooked woocommerce_template_single_meta - 40
-			 * @hooked woocommerce_template_single_sharing - 50
-			 */
 
 remove_action( 'storefront_footer', 'storefront_credit', 50);
 
@@ -35,6 +24,8 @@ add_action( 'woocommerce_single_product_summary', 'woocommerce_template_header_d
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 22 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_info_delivery', 35 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 45 );
+
+
 
 add_filter( 'woocommerce_get_price_html', 'custom_cents_price_html', 100, 2 );
 function custom_cents_price_html( $price, $product ){
@@ -60,6 +51,13 @@ function woocommerce_template_info_delivery(){
 		</div>';
 }
 
+add_filter('loop_shop_columns', 'loop_columns');
+if (!function_exists('loop_columns')) {
+	function loop_columns() {
+		return 5; 
+	}
+}
+
 if ( ! function_exists( 'storefront_header_cart' ) ) {
 	
 	function storefront_child_header_cart() {
@@ -71,7 +69,7 @@ if ( ! function_exists( 'storefront_header_cart' ) ) {
 			}
 		?>
 		<li class="cart-header <?php echo esc_attr( $class ); ?>">
-			<a class="cart" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="">
+			<a class="cart-header" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="">
 				<i class="sprite icon-header-cart"></i> 
 			</a>		
 				<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
@@ -99,7 +97,7 @@ function widgets_custom_init() {
 function lallupe_scripts() {
 	$template_url = get_template_directory_uri()."-child";
 	wp_enqueue_style( 'custom-styles', $template_url."/app/styles/styles.css", array(), '1.0' );
-	wp_enqueue_script( 'bootstrap', $template_url."/app/scripts/src/bootstrap.min.js", array(), '1.0', true );
+	//wp_enqueue_script( 'bootstrap', $template_url."/app/scripts/src/bootstrap.min.js", array(), '1.0', true );
 
 	wp_enqueue_script( 'app', $template_url."/app/scripts/app.js", array(), '1.0', true );
 
@@ -109,3 +107,68 @@ function lallupe_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'lallupe_scripts' );
+
+
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Configurações Gerais',
+		'menu_title'	=> 'Configurações Gerais',
+		'menu_slug' 	=> 'general-config',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Slideshow',
+		'menu_title'	=> 'Slideshow',
+		'menu_slug' 	=> 'slideshow',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Adicionar novo slide',
+		'menu_title'	=> 'Adicionar novo slide',
+		'parent_slug'	=> 'slideshow',
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Adicionar novo slide mobile',
+		'menu_title'	=> 'Adicionar novo slide mobile',
+		'parent_slug'	=> 'slideshow',
+	));
+
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Banners',
+		'menu_title'	=> 'Banners promocionais',
+		'menu_slug' 	=> 'banners-promocionais',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Banner principal',
+		'menu_title'	=> 'Banner principal',
+		'parent_slug'	=> 'banners-promocionais',
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> '1º banner lateral',
+		'menu_title'	=> '1º banner lateral',
+		'parent_slug'	=> 'banners-promocionais',
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> '2º banner lateral',
+		'menu_title'	=> '2º banner lateral',
+		'parent_slug'	=> 'banners-promocionais',
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> '3º banner lateral',
+		'menu_title'	=> '3º banner lateral',
+		'parent_slug'	=> 'banners-promocionais',
+	));
+}

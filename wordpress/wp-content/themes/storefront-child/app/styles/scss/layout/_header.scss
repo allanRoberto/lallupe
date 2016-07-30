@@ -1,10 +1,6 @@
-.main-header {
-  
-}
-
 .top-header {
 	background : #fff;
-	padding : 15px 0px;
+	padding: 21px 0px 13px 2px;
 }
 
 	.info-header {
@@ -16,7 +12,7 @@
 
 	.info-header span i {
 		float: left;
-		margin : 0 5px;
+		margin : 0 10px;
 	}
 
 	.info-header span:first-child i {
@@ -25,9 +21,21 @@
 
 	.info-header span a {
 		text-decoration: none;
-		color : #939598;
-		float: left;
+	    color: #939598;
+	    float: left;
+	    margin-right: 7px;
+	    font-size: 14.6px;
+
 	}
+
+	.info-header span:last-child a{
+		margin-right : 0px !important;
+	}
+
+	.icon-header-phone {
+		top: -2px;
+    	position: relative;
+    }
 	
 	.secondary-navigation {
 		float: right;
@@ -59,7 +67,7 @@
 
 .middle-header {
 	background : #f1f2f2;
-	padding : 25px 0;
+	padding : 30px 0;
 }
 	.logo-header {
 		float: left;
@@ -89,18 +97,36 @@
 		.shop-header li {
 			list-style: none;
 			float: left;
+			margin-right: 13px;
+    		margin-top: 4px;
+		}
+
+		.shop-header li:last-child {
+			margin-right : 0px;
 		}
 
 .bottom-header {
 	background : #fff;
+	padding-top: 7px;
+    padding-bottom: 7px;
 }
+	#menu-primary {
+		padding-left : 0px;
+		top : 5px;
+		position: relative;
+	}
+
 	.navbar-default {
 		margin-bottom: 0px !important;
 	}
 	.navbar-default .navbar-nav > li > a {
 		text-decoration : none;
 		text-transform : uppercase;
-		font-size: 13px;
+		font-size: 14px;
+	}
+
+	.bottom-header .nav > li > a {
+        padding: 10px 22px;
 	}
 
 	.social-header {
@@ -110,7 +136,6 @@
 	.social-header .item-social-header {
 		list-style: none;
 		float: left;
-		margin-right: 4px;
 	}
 
 	.social-header .item-social-header:last-child {
@@ -151,7 +176,7 @@
 	}
 
 .divider-header {
-	height: 3px;
+	height: 5px;
     border: 0px;
     margin: 0px;
 	background: #6bb1ab; /* Old browsers */
@@ -159,4 +184,9 @@
 	background: -webkit-linear-gradient(left,  #6bb1ab 0%,#6bb1ab 12%,#6bb1ab 12%,#a0b7b7 12%,#a0b7b7 24%,#497f9e 24%,#497f9e 36%,#91adc4 36%,#91adc4 48%,#304058 48%,#304058 60%,#fbddea 60%,#fbddea 72%,#b74164 72%,#b74164 84%,#f8c5cc 84%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to right,  #6bb1ab 0%,#6bb1ab 12%,#6bb1ab 12%,#a0b7b7 12%,#a0b7b7 24%,#497f9e 24%,#497f9e 36%,#91adc4 36%,#91adc4 48%,#304058 48%,#304058 60%,#fbddea 60%,#fbddea 72%,#b74164 72%,#b74164 84%,#f8c5cc 84%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6bb1ab', endColorstr='#f8c5cc',GradientType=1 ); /* IE6-9 */
+}
+
+.slide img {
+	width: 100% ;
+	max-width: 100%;
 }

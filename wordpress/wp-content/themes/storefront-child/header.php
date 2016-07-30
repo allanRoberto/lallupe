@@ -23,15 +23,19 @@
 
 		<header class="main-header">
 		   	<div class="top-header">
-		   	    <div class="container-fluid">
+		   	    <div class="container">
 			   	    <div class="row">
 			   	        <div class="col-md-4">
 							<div class="info-header" itemscope itemtype="http://schema.org/LocalBusiness">
-								<span  class="tel-header" itemprop="telephone">
-									<i class="sprite icon-header-phone"></i><a href="tel:+551100000000" title="Liga para nós">(11) 0000-0000</a></span>
+
 								<span  class="email-header">
 									<i class="sprite icon-header-email"></i>
-									<a href="mailto:atendimento@lallupe.com.br" title="Envie um e-mail">atendimento@lallupe.com.br</a></span>
+									<a href="mailto:atendimento@lallupe.com.br" title="Envie um e-mail">atendimento@lallupe.com.br</a>
+								</span>
+								<span  class="tel-header" itemprop="telephone">
+									<i class="sprite icon-header-phone"></i>
+									<a href="tel:+551100000000" title="Liga para nós">(11) 0000-0000</a>
+								</span>
 							</div>
 						</div>
 						<div class="col-md-4 col-md-offset-4">
@@ -49,7 +53,7 @@
 				</div>
 			</div>
 			<div class="middle-header">
-			    <div class="container-fluid">
+			    <div class="container">
 				    <div class="row row-centered">
 				        <div class="col-md-2">
 							<a class="logo-header" href="<?php echo site_url(); ?>" title="Lallupe">
@@ -65,9 +69,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="bottom-header container-fluid">
+			<div class="bottom-header container">
 				<div class="row row-centered">
-					<div class="col-md-7">
+					<div class="col-md-8">
 						<div class="navbar navbar-default">
 					    	<div class="navbar-header">
 							    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -87,7 +91,7 @@
 					        </div>													
 					    </div>														
 					</div>
-					<div class="col-md-4">	
+					<div class="col-md-3">	
 						<div class="search-header">
 							<?php dynamic_sidebar( 'search-header' ); ?>
 						</div>
@@ -95,17 +99,12 @@
 					<div class="col-md-1">
 						<ul class="social-header">
 							<li class="item-social-header">
-								<a class="facebook-header" title="Facebook">
+								<a class="facebook-header" href="https://www.facebook.com/lallupe/" title="Facebook" target="_BLANK">
 									<i class="sprite icon-header-facebook"></i>
 								</a>
 							</li>
 							<li class="item-social-header">
-								<a class="twitter-header" title="Twitter">
-									<i class="sprite icon-header-twitter"></i>
-								</a>
-							</li>
-							<li class="item-social-header">
-								<a class="instagram-header" title="Instagram">
+								<a class="instagran-header" href="https://www.instagram.com/lallupeoficial/" title="Twitter" target="_BLANK">
 									<i class="sprite icon-header-instagran"></i>
 								</a>
 							</li>
