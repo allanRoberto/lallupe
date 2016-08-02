@@ -104,6 +104,8 @@ table.cart td.product-subtotal {
 .woocommerce-cart table.cart .quantity .qty {
    @extend .texto-rosa;
    font-size : 14px;
+   top : -1px;
+   position : relative;
 }
 
 .woocommerce-cart table.cart td.actions label {

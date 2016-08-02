@@ -565,3 +565,13 @@ ul.products li.product img {
 	}
 }
 
+@media (max-width : 728px) {
+	.price-number ins {
+		height: 45px;
+    	width: 45px;
+	}
+	.products .product .price-number ins .woocommerce-Price-currencySymbol {
+		top : -6px !important;
+	}
+}
+

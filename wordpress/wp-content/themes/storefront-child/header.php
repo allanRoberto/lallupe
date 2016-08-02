@@ -23,7 +23,7 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
 		<header class="main-header">
-		   	<div class="top-header">
+		   	<div class="top-header hidden-xs">
 		   	    <div class="container">
 			   	    <div class="row">
 			   	        <div class="col-md-4">
@@ -53,7 +53,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="middle-header">
+			<div class="middle-header hidden-xs">
 			    <div class="container">
 				    <div class="row row-centered">
 				        <div class="col-md-2">
@@ -72,14 +72,14 @@
 			</div>
 			<div class="bottom-header container">
 				<div class="row row-centered">
-					<div class="col-md-8">
+					<div class="col-md-8 col-xs-2 line-right-mobile">
 						<div class="navbar navbar-default">
 					    	<div class="navbar-header">
-							    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-primary" aria-expanded="false">
 							        <span class="sr-only">Toggle navigation</span>
-							        <span class="icon-bar"></span>
-							        <span class="icon-bar"></span>
-							        <span class="icon-bar"></span>
+							        <span class="icon-bar icon-top"></span>
+							        <span class="icon-bar icon-hide"></span>
+							        <span class="icon-bar icon-bottom"></span>
 							    </button>
 						    </div>  
 					        <div class="collapse navbar-collapse" id="menu-primary">
@@ -92,12 +92,27 @@
 					        </div>													
 					    </div>														
 					</div>
-					<div class="col-md-3">	
+					<div class="col-xs-6 line-right-mobile visible-xs-block">
+						<a class="logo-header" href="<?php echo site_url(); ?>" title="Lallupe">
+							<img src="<?php echo $template_url; ?>/app/images/header-logo.png" class="logo-mobile"/>
+						</a>
+					</div>
+					<div class="col-xs-2 line-right-mobile menu-container-mobile visible-xs-block">
+						<a href="#" class="icon-search-mobile-header">
+							<i class="fa fa-search fa-2x" aria-hidden="true"></i>
+						</a>
+					</div>
+					<div class="col-xs-2  visible-xs-block">
+						<a href="#" class="icon-cart-mobile-header">
+							<i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+						</a>
+					</div>
+					<div class="col-md-3 hidden-xs ">	
 						<div class="search-header">
 							<?php dynamic_sidebar( 'search-header' ); ?>
 						</div>
 					</div>
-					<div class="col-md-1">
+					<div class="col-md-1 hidden-xs">
 						<ul class="social-header">
 							<li class="item-social-header">
 								<a class="facebook-header" href="https://www.facebook.com/lallupe/" title="Facebook" target="_BLANK">

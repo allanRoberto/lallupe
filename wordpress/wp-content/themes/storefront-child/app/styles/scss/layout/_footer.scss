@@ -3,6 +3,22 @@
 	padding-bottom : 40px;
 }
 
+#sb_instagram .sb_instagram_header h3 {
+	font-size : 31px;
+}
+
+#sb_instagram .sb_instagram_header h3:before {
+	content : none !important;
+}
+
+.sbi_bio {
+	display: none;
+}
+
+.storefront-handheld-footer-bar {
+	display: none;
+}
+
 .site-footer .col-full {
 	@extend .container-fluid;
 }
@@ -10,16 +26,11 @@
 	.site-footer .footer-widgets {
 	  @extend .row;
 	  padding-top : 60px;
-	  display: -webkit-box;
-	  display: -moz-box;
-	  display: -ms-flexbox;
-	  display: -webkit-flex;
-	  display: flex;
-	  overflow: hidden;
 	}
 
-	.site-footer .footer-widget-1, .footer-widget-2, .footer-widget-3 {
+	.footer-widget-1, .footer-widget-2, .footer-widget-3 {
 	  @extend .col-md-4;
+	  @extend .col-sm-1;
 	  border-right : 1px solid #fff;
 	}
 
@@ -132,4 +143,10 @@
 
 .fb_iframe_widget {
 	margin-bottom : 30px;
+}
+
+@media (max-width : 480px) {
+	#sb_instagram.sbi_col_3 #sbi_images .sbi_item {
+		width : 33%;
+	} 
 }

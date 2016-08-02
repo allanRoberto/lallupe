@@ -3421,10 +3421,11 @@ d.parent(".dropdown-menu").length&&(d=d.closest("li.dropdown").addClass("active"
 	    loop:true,
 	    margin:10,
 	    nav: true,
+	    navContainerClass : 'navigation-carousel',
 	    responsive : {
 		    // breakpoint from 0 up
 		    0 : {
-		        items : 1,
+		        items : 3,
 		    },
 		    480 : {
 		        items : 2,

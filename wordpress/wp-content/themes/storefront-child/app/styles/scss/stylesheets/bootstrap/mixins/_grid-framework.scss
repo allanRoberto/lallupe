@@ -55,7 +55,7 @@
     .col-#{$class}-pull-0 {
       right: auto;
     }
-  }
+  } 
   @if ($type == offset) {
     .col-#{$class}-offset-#{$index} {
       margin-left: percentage(($index / $grid-columns));
