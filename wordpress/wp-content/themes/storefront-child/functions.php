@@ -25,7 +25,9 @@ add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_p
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_info_delivery', 35 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 45 );
 
+remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
 
+add_action('woocommerce_checkout_order_review_custom', 'woocommerce_checkout_payment', 20 );
 
 add_filter( 'woocommerce_get_price_html', 'custom_cents_price_html', 100, 2 );
 function custom_cents_price_html( $price, $product ){

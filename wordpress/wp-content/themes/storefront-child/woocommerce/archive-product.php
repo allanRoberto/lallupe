@@ -104,5 +104,30 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_sidebar' );
 	?>
+	<div id="primary" class="content-area container">
+		<main id="main" class="site-main" role="main">
+			<div class="banners row">
+				<div class="banner-home col-md-4">
+					<img src="<?php the_field('first_featured', 'option'); ?>" />
+				</div>
+				<div class="banner-home col-md-4">
+					<img src="<?php the_field('second_featured', 'option'); ?>" />
+				</div>
+				<div class="banner-home col-md-4">
+					<img src="<?php the_field('third_featured', 'option'); ?>" />
+				</div>
+			</div>
+		</main>
+	</div>	
+	<div class="newsletters">
+		<div class="container">
+			<div class="row">
+				<div class="col--md-12">
+				<?php gravity_form( 1, $display_title = false, $display_description = false, $display_inactive = false, $field_values = null, $ajax = false, $tabindex, $echo = true ); ?>
+				</div>
+			</div>
+		</div>
+	</div>
 
 <?php get_footer( 'shop' ); ?>
+	

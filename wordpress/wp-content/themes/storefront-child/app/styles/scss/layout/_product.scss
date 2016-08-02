@@ -21,27 +21,84 @@
 	@extend .col-md-4;
 }
 
+.archive.woocommerce-page .woocommerce-pagination {
+	@extend .col-md-4;
+	@extend .col-md-offset-4;
+	margin-bottom : 40px;
+}
+
+.archive.woocommerce-page .woocommerce-pagination .page-numbers {
+	display : table;
+	margin: auto;
+}
+
+.archive.woocommerce-page .woocommerce-pagination .page-numbers li {
+	list-style: none;
+	float: left;
+	display : inline-block;
+	width : 40px;
+	height : 40px;
+	margin-right: 10px;
+}
+.archive.woocommerce-page .woocommerce-pagination .page-numbers li a, .archive.woocommerce-page .woocommerce-pagination .page-numbers li span {
+	float : left;
+	width : 40px;
+	height : 40px;
+	@extend .hugs;
+	background : #d1d2d4;
+	color : #fff;
+	border-radius : 50px;
+	text-align : center;
+	line-height : 45px;
+	margin-right : 10px;
+	font-size : 28px;
+	text-decoration: none;	
+	display: inline-block;	
+}
+
+.archive.woocommerce-page .woocommerce-pagination .page-numbers li span {
+	background : #6bb1ab;
+}
+
+.archive.woocommerce-page .woocommerce-pagination .page-numbers li a.next {
+	@extend .icon-btn-navigation-next;
+	@extend .sprite;
+	background-color: transparent;
+	text-indent: -9999px;
+}
+
+.archive.woocommerce-page .woocommerce-pagination .page-numbers li .prev {
+	@extend .icon-btn-navigation-prev;
+	@extend .sprite;
+	background-color: transparent;
+	text-indent: -9999px;
+}
+
 .archive.woocommerce-page .woocommerce-ordering {
 	@extend .styled-select;
 	border-radius : 50px;
 	border: 1px solid #939597;
 	padding-left : 10px;
 	width: 100%;
+	margin-right : 0px !important;
 }
 
 
 .archive.woocommerce-page .woocommerce-ordering:after {
-	top: 55px !important;
-    right: 20px !important;
+	top: 65px !important;
+    right: 0px !important;
 }
 
 .woocommerce-result-count {
 	border-top : 2px dashed #939597;
 	width : 100%;
 	margin-top : 30px;
+	margin-bottom : 10px !important;
+	@extend .helvetica;
+	@extend .texto-cinza;
 
 }
-.archive.woocommerce-page .storefront-sorting select {
+.archive.woocommerce-page .storefront-ordering select {
 	background: transparent;
    width: 268px;
    padding: 5px;
@@ -54,6 +111,8 @@
    z-index: 999999;
    position : relative;
 }
+
+
 
  .woocommerce-main-image img {
    width: 100%;
