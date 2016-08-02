@@ -1,0 +1,64 @@
+.woocommerce-MyAccount-navigation {
+	@extend .col-md-4;
+}
+
+.woocommerce-MyAccount-navigation ul li a:before {
+	content : none !important;
+}
+
+.woocommerce-MyAccount-navigation ul li {
+	background : #f3f3f4;
+	border-radius : 10px;
+	border : 0px !important;
+	margin: 10px 0;
+	text-align: center;
+}
+
+.woocommerce-MyAccount-navigation ul li a {
+	@extend .helvetica;
+	@extend .texto-cinza;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+.woocommerce-MyAccount-navigation ul li.is-active {
+	background : #6bb1ab;
+}
+
+.woocommerce-MyAccount-navigation ul li.is-active a {
+	color : #fff !important;
+}
+
+.woocommerce-MyAccount-navigation-link--downloads {
+	display: none;
+}
+
+.status-order {
+	background: #f3f3f4;
+	color : #939597;
+	text-transform: uppercase;
+	@extend .helvetica;
+	padding : 15px;
+	border-radius : 10px;
+	display: inline-block;
+	margin-top: 10px;
+}
+
+.info-order {
+	width : 100%;
+	float: left;
+	margin-top : 30px;
+	margin-bottom : 30px;
+
+}
+
+.info-order span {
+	width: 100%;
+	float: left;
+	@extend .helvetica;
+	@extend .texto-cinza;
+}
+
+.info-order span mark {
+	background : transparent !important;
+	font-weight : 800 !important;
+}
