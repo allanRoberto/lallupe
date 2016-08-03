@@ -245,8 +245,11 @@ table.variations {
     font-size: 11px;
 }
 
+.single-price-product, .fswp_installments_price.single  {
+	@extend .col-md-6;
+}
+
 .info-delivery {
-	@extend .col-md-12;
 	text-align : right;
 	margin-top : 10px;
 	padding-left : 0px !important;

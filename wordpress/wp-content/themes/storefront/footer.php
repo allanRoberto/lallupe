@@ -38,7 +38,6 @@
 			</div>
 		</div>
     </div>
-	<?php do_action( 'storefront_after_footer' ); ?>
 
 </div><!-- #page -->
 

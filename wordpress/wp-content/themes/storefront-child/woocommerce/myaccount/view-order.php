@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<p><span class="status-order">Status do pedido  : <?php echo wc_get_order_status_name( $order->get_status() ); ?></span></p>
+<p class="order-status"><span class="status-order">Status do pedido  : <?php echo wc_get_order_status_name( $order->get_status() ); ?></span></p>
 <p class="info-order">
 	<span>Número do pedido : <mark><?php echo $order->get_order_number(); ?></mark></span>
 	<span>Data do pedido : <mark><?php echo date_i18n( get_option( 'date_format' ), strtotime( $order->order_date ) ); ?></mark></span>

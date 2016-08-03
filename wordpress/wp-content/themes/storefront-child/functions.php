@@ -20,9 +20,8 @@ remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_p
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sku', 10);
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_header_delivery', 21 );
-//add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 22 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_info_delivery', 35 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 21 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_delivery', 22 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 45 );
 
 remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
@@ -34,24 +33,24 @@ function custom_cents_price_html( $price, $product ){
     return '' . str_replace( ',', '<span class="cents">,', $price );
 }
 
+
+
 function woocommerce_template_single_sku(){
 	global $product;
 	echo '<div class="sku-title">Ref. ' . $product->sku . '</div>';
 }
 
-function woocommerce_template_header_delivery() {
-	echo '<div class="info-delivery">
-		<p class="col-md-8 col-md-offset-4 title-delivery">Frete grátis na compra de 2 capinhas ou mais !</p>
-		<div class="col-md-4">';
-}
+function woocommerce_template_delivery() {
 
+	$title_delivery = esc_html(get_field('title-shipping', 'option'));
+	$description_delivery = esc_html(get_field('description-shipping', 'option'));
 
-function woocommerce_template_info_delivery(){
-	global $product;
-	echo '</div>
-			<p class="col-md-8 description-delivery">Prazo de Envio: 7 dias úteis + o prazo dos correios. Basta selecionar o modelo de seu smartphone abaixo selecionar a quantidade desejada e finalizar a compra.</p>
+	echo '<div class="info-delivery col-md-6">
+			<p class="title-delivery">'.$title_delivery.'</p>
+			<p class="description-delivery">'.$description_delivery.'</p>
 		</div>';
 }
+
 
 add_filter('loop_shop_columns', 'loop_columns');
 if (!function_exists('loop_columns')) {
