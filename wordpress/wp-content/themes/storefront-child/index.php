@@ -11,7 +11,7 @@
  */
 
 get_header(); ?>
-	<section id="slideshow" class="slideshow container-fluild">
+	<section id="slideshow" class="slideshow container-fluild hidden-xs">
 		<div id="carousel-slideshow" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
 				<?php 
@@ -55,35 +55,47 @@ get_header(); ?>
 			</a>
 		</div>	
 	</section>
-	<section class="slideshow-mobile container-fluild">
-		<?php 
-			if( have_rows('slides_mobile', 'option') ){
-				while( have_rows('slides', 'option')) : the_row();
+	<section class="slideshow-mobile container-fluild visible-xs-block">
+		<div id="carousel-slideshow-mobile" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<?php 
+					if( have_rows('slides_mobile', 'option') ){
+						while( have_rows('slides_mobile', 'option')) : the_row();
 
-				$slide_link_active = get_sub_field('slide_active');
-				$slide_link        = get_sub_field('slide_link');
-				$slide_image       = get_sub_field('slide_image');
-				$slide_description = get_sub_field('slide_description');
+						$slide_link_active = get_sub_field('slide_active');
+						$slide_link        = get_sub_field('slide_link');
+						$slide_image       = get_sub_field('slide_image');
+						$slide_description = get_sub_field('slide_description');
 
-				$slide_content = sprintf(
-					'<div class="main-slide">
-						%1$s
-							<img src="%2$s" alt="%3$s" class="img-responsive" />
-						%4$s	
-					</div>',
-					($slide_link_active == true ? sprintf('<a href="%s" title="%s">', $slide_link, $slide_description) : ''),
-					$slide_image,
-					$slide_description,
-					($slide_link_active == true ? '</a>' : '')
-				);
+						$slide_content = sprintf(
+							'<div class="main-slide">
+								%1$s
+									<img src="%2$s" alt="%3$s" class="img-responsive" />
+								%4$s	
+							</div>',
+							($slide_link_active == true ? sprintf('<a href="%s" title="%s">', $slide_link, $slide_description) : ''),
+							$slide_image,
+							$slide_description,
+							($slide_link_active == true ? '</a>' : '')
+						);
 
-				echo $slide_content;
+						echo $slide_content;
 
-				endwhile;
-			}else {
-				echo "";
-			}
-		?>
+						endwhile;
+					}else {
+						echo "";
+					}
+				?>
+			</div>
+			<a class="left carousel-control" href="#carousel-slideshow-mobile" role="button" data-slide="prev">
+			    <span class="icon-prev" aria-hidden="true"></span>
+			    <span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#carousel-slideshow-mobile" role="button" data-slide="next">
+			    <span class="icon-next" aria-hidden="true"></span>
+			    <span class="sr-only">Next</span>
+			</a>
+		</div>	
 	</section>
 
 	<div id="primary" class="content-area container">

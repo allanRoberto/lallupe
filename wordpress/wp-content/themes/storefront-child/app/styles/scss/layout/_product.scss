@@ -1,6 +1,14 @@
 
 /* Página do produto */
 
+.swatch-wrapper, div.swatch-wrapper.selected, .swatch-wrapper a {
+	border-radius : 50px;
+}
+
+table.variations {
+	float: right;
+}
+
 .site-main ul.products li.product {
 	width: 19.2% !important;
     float: left;
@@ -480,6 +488,21 @@ ul.products li.product img {
 	text-transform: capitalize;
 }
 
+@media (max-width : 480px) {
+	.title-carousel-products, .single-product .related h2, .product_title.entry-title {
+		font-size : 39px !important;
+	}
+
+	.navigation-carousel {
+		top : -77px !important;
+	}
+}
+
+.navigation-carousel .owl-prev {
+	margin-right : 10px;
+}
+
+
 .site-main .columns-5 ul.products li.product.last {
    margin-right: 0px !important;
 }
@@ -566,9 +589,36 @@ ul.products li.product img {
 }
 
 @media (max-width : 728px) {
+	.onsale {
+		display: none !important;
+	}
+
+	.banner-home img{
+      display: block;
+      margin : auto;
+	}
+	ul.products li.product h3 {
+		padding : 0px;
+		font-size: 13px !important;
+		text-align: center;
+		height : 40px;
+	}
 	.price-number ins {
 		height: 45px;
     	width: 45px;
+    	font-size : 20px;
+    	margin: auto;
+	    display: table;
+	    float: none;
+	}
+
+	.products .product .price-number ins .amount {
+		font-size : 20px;
+	}
+
+	.products .product .price-number ins .woocommerce-Price-currencySymbol, .products .product .price-number ins .cents {
+		top : -8px !important;
+		left : -1px !important;
 	}
 	.products .product .price-number ins .woocommerce-Price-currencySymbol {
 		top : -6px !important;
