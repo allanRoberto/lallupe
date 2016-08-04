@@ -5,9 +5,6 @@
 	border-radius : 50px;
 }
 
-table.variations {
-	float: right;
-}
 
 .site-main ul.products li.product {
 	width: 19.2% !important;
@@ -160,7 +157,7 @@ table.variations {
 }
 
 .product_title {
-	margin : 0px 0px 30px 0px;
+	margin : 0px !important;
 }
 
 .product_title.entry-title:after {
@@ -170,7 +167,7 @@ table.variations {
 	margin-bottom : 10px;
 	height : 1px;
 	background : transparent;
-	border : 1px dashed #939598;
+	border-bottom : 1px dashed #939598;
 	display : block;
 } 
 
@@ -180,42 +177,46 @@ table.variations {
 }
 
 .description-product {
-	@extend .col-md-8;
-	@extend .col-md-pull-4;
+	@extend .col-md-12;
 	color: #939597;
-    border: 1px solid #939597;
-    border-radius: 0px 30px 25px 0px;
     padding: 30px 30px 30px 45px;
-    left: -31px;
     z-index: 0;
     position: relative;
     border-left: 0px;
+    font-size: 15px;
+    border-bottom: 1px dashed #939597;
+    margin-bottom: 30px;
 }
 
-.single-product div.product form.cart {
+.single-product form.cart {
 	@extend .col-md-12;
 }
 
 .single.fswp_installments_price .price.fswp_calc:before {
-	content : 'ou';
-	font-family: 'hugs_and_kisses_xoxo_demoRg';
-	font-size: 32px;
+	content: 'ou';
+    font-family: 'hugs_and_kisses_xoxo_demoRg';
+    font-size: 32px;
     color: #b74164;
     width: 100%;
     display: block;
-    text-align: right;
-    padding-right: 67px;
-
+    text-align: center;
+    padding-left: 67px;
+    line-height: 14px;
+    margin-top: 38px;
+    right : -65px;
+    top : 30px;
+    position: relative;
 }
 .single.fswp_installments_price .price.fswp_calc {
 
 	position: relative;
-	top : 20px;
 	text-align : right !important;
+	margin-right : 10px;
 }
 
 .single.fswp_installments_price .price.fswp_calc .fswp_installment_prefix {
 	float : right;
+	width : 100%;
 }
 
 .single.fswp_installments_price .price.fswp_calc .amount {
@@ -241,12 +242,17 @@ table.variations {
     margin-top: -50px;
     background: #fff;
     color: #b74164;
-    text-decoration: underline;
     font-size: 11px;
+    top : 20px;
 }
 
-.single-price-product, .fswp_installments_price.single  {
-	@extend .col-md-6;
+.fswp_installments_price.single {
+	@extend .col-md-offset-1;
+	@extend .col-md-3;
+}
+
+.single-price-product  {
+	@extend .col-md-2;
 }
 
 .info-delivery {
@@ -256,20 +262,6 @@ table.variations {
 	padding-right : 0px !important;
 }
 
-.info-delivery:before {
-  	content : "";
-	width : 50%;
-	margin-top : 2px;
-	margin-bottom : 10px;
-	height : 1px;
-	background : transparent;
-	border : 1px dashed #939598;
-	display : block;
-	top : 30px;
-	position : relative;
-
-}
-
 .info-delivery p.title-delivery {
  	font-family: 'hugs_and_kisses_xoxo_demoRg';
     font-size: 26px;
@@ -277,9 +269,10 @@ table.variations {
     text-decoration: underline;
     display: table;
     position: relative;
-    float: right;
+    float: left;
     padding-right: 0px;
-    text-align: right;
+    text-align: left;
+    width: 100%;
 }
 
 .info-delivery p.description-delivery {
@@ -332,11 +325,38 @@ table.variations {
 	color : #939597;
 }
 
+.single-product .price del {
+	float: right;
+	text-align: right;
+	margin-bottom: 5px;
+}
+
+.products .product .price del {
+	text-align: left !important;
+}
+
 .gform_variation_wrapper {
 	@extend .col-md-12;
 	padding-right : 0px !important;
 	margin-bottom : 10px;
 }
+
+.variations  {
+	@extend .col-md-6;
+	margin-top : 20px !important;
+}
+
+.variations .label {
+	width : 100%;
+	text-align : left;
+	color : #939597;
+	font-size : 14px;
+}
+
+.attribute_pa_cor-do-nome_picker_label {
+	display: none;
+}
+
 
 .styled-select {
 	list-style: none;
@@ -412,7 +432,7 @@ table.variations {
   font-size : 32px;
 }
 
-.products .product .price-number ins .woocommerce-Price-currencySymbol, .products .product .price-number ins .cents {
+.products .product .price-number ins .woocommerce-Price-currencySymbol, .products .product .price-number .cents {
 	top : -16px;
 	left : -2px;
 	font-size : 9px !important;
@@ -520,37 +540,59 @@ ul.products li.product img {
 		float: left;
 		margin-bottom: 5px;
 	}
-	.price-number ins {
+	ins .price-number {
 		margin: 0px;
-	    text-decoration: none;
+   	 	text-decoration: none;
 	    background: #B74164 !important;
 	    color: #fff !important;
 	    border-radius: 60px;
 	    display: table;
-	    float: left;
-	    font-size: 17px;
+	    float: right;
+	    font-size: 31px;
 	    text-decoration: none;
-	    height: 70px;
-	    width: 70px;
+	    height: 90px;
+	    width: 90px;
 	    padding: 19px 10px;
 	}
+	
+	ul.products li.product .price {
+		@extend .col-md-6;
+	}
+	ul.products li.product .price del {
+		width : 100% !important;
+		float: left;
+	}
+	ul.products li.product .price ins {
+		display: table;
+	}
 
-	.price-number ins .amount {
+	ul.products li.product .price ins .price-number {
+		font-size: 26px !important;
+	    height: 28px !important;
+	    width: 35px !important;
+	}
+	
+	ul.products li.product .price ins .cents {
+		top : -10px;
+	}
+
+
+	ins .price-number .amount {
 		font-size: 45px;
 	}
 
-	.price-number ins .amount .cents {
+	ins .price-number .cents {
 		font-size: 14px;
-	    top: -18px;
+	    top: -13px;
 	    position: relative;
 	}
 
-	.price-number ins .woocommerce-Price-currencySymbol {
+	ins .price-number ins .woocommerce-Price-currencySymbol {
 		top: -25px;
 		left: 8px;
 	}
 
-	.price-number .woocommerce-Price-currencySymbol {
+	ins .price-number .woocommerce-Price-currencySymbol {
 	  font-size: 11px !important;
 	  top: -2px;
 	  position: relative;
@@ -613,18 +655,6 @@ ul.products li.product img {
     	margin: auto;
 	    display: table;
 	    float: none;
-	}
-
-	.products .product .price-number ins .amount {
-		font-size : 20px;
-	}
-
-	.products .product .price-number ins .woocommerce-Price-currencySymbol, .products .product .price-number ins .cents {
-		top : -8px !important;
-		left : -1px !important;
-	}
-	.products .product .price-number ins .woocommerce-Price-currencySymbol {
-		top : -6px !important;
 	}
 }
 

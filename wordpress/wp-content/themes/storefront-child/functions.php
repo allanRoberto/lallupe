@@ -9,7 +9,7 @@ remove_action( 'storefront_footer', 'storefront_credit', 50);
 
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
-//remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
@@ -20,8 +20,9 @@ remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_p
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sku', 10);
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 21 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_delivery', 22 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_delivery', 21 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 22 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_clearfix', 22 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 45 );
 
 remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
@@ -30,7 +31,11 @@ add_action('woocommerce_checkout_order_review_custom', 'woocommerce_checkout_pay
 
 add_filter( 'woocommerce_get_price_html', 'custom_cents_price_html', 100, 2 );
 function custom_cents_price_html( $price, $product ){
-    return '' . str_replace( ',', '<span class="cents">,', $price );
+
+	$price_del = str_replace('<del>', '<del> De :', $price);
+	$price_format = str_replace('<span class="woocommerce-Price-amount amount">', '<span class="woocommerce-Price-amount amount price-number">', $price_del);
+
+    return '' . str_replace( ',', '<span class="cents">,', $price_format );
 }
 
 
@@ -39,6 +44,12 @@ function woocommerce_template_single_sku(){
 	global $product;
 	echo '<div class="sku-title">Ref. ' . $product->sku . '</div>';
 }
+
+function woocommerce_template_clearfix(){
+	echo '<div class="clearfix border-single-product"></div>';
+}
+
+
 
 function woocommerce_template_delivery() {
 
