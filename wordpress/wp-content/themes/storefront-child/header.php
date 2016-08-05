@@ -33,10 +33,6 @@
 									<i class="sprite icon-header-email"></i>
 									<a href="mailto:atendimento@lallupe.com.br" title="Envie um e-mail">atendimento@lallupe.com.br</a>
 								</span>
-								<span  class="tel-header" itemprop="telephone">
-									<i class="sprite icon-header-phone"></i>
-									<a href="tel:+551100000000" title="Liga para nós">(11) 0000-0000</a>
-								</span>
 							</div>
 						</div>
 						<div class="col-md-4 col-md-offset-4">
