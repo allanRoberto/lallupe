@@ -1,6 +1,13 @@
 (function($) {
 	$(document).ready(function(){
 
+	  $(".gfield_radio li input[type='radio']").trigger('click');
+	  $(".gfield_radio li input[type='radio']").attr('checked',true);
+
+	  $(document).ready(function() {
+		$(".wc-default-select").select2();
+	  });
+	  
 
 	  $(".carousel-products .products").addClass('owl-carousel');
 

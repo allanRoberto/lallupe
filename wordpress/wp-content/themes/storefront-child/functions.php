@@ -5,6 +5,13 @@ add_action('storefront_child_cart_header', 'storefront_child_header_cart', 60 );
 add_action( 'storefront_child_search_header', 'storefront_product_search', 40 );
 
 
+add_action( 'wp_enqueue_scripts', 'artezzo_remove_scripts', 20 );
+
+function artezzo_remove_scripts(){
+    wp_dequeue_script('wc-gravityforms-product-addons');
+}
+
+
 remove_action( 'storefront_footer', 'storefront_credit', 50);
 
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
@@ -14,6 +21,18 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
+remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation_add_to_cart_button', 20);
+
+// hide coupon field on checkout page
+function hide_coupon_field_on_checkout( $enabled ) {
+ 
+	if ( is_checkout() ) {
+		$enabled = false;
+	}
+ 
+	return $enabled;
+}
+add_filter( 'woocommerce_coupons_enabled', 'hide_coupon_field_on_checkout' );
 
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
   
@@ -22,12 +41,45 @@ add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_s
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_delivery', 21 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 22 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_clearfix', 22 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 45 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_clearfix', 23 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 24 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_top_tag_add_to_cart', 25);
+add_action( 'woocommerce_single_product_summary', 'woocommerce_single_variation_add_to_cart_button_submit', 26);
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_bottom_tag_add_to_cart', 27);
+
 
 remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
 
 add_action('woocommerce_checkout_order_review_custom', 'woocommerce_checkout_payment', 20 );
+
+
+function woocommerce_template_single_top_tag_add_to_cart(){
+	global $product;
+	echo '<div class="col-md-6">';
+}
+
+function woocommerce_template_single_bottom_tag_add_to_cart(){
+	global $product;
+	echo '</div>';
+}
+function woocommerce_single_variation_add_to_cart_button_submit() {
+	
+	global $product;
+
+	if ( ! $product->is_sold_individually() ) {
+		woocommerce_quantity_input( array(
+			'min_value'   => apply_filters( 'woocommerce_quantity_input_min', 1, $product ),
+			'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->backorders_allowed() ? '' : $product->get_stock_quantity(), $product ),
+			'input_value' => ( isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : 1 )
+		) );
+	}
+
+
+	echo '<div class="line-separator-price"></div>
+			<input type="hidden" name="add-to-cart" value="'.esc_attr( $product->id ).'" />
+	      <button type="submit" class="single_add_to_cart_button button alt">'.esc_html( 'Eu quero' ).'</button>';
+}
+
 
 add_filter( 'woocommerce_get_price_html', 'custom_cents_price_html', 100, 2 );
 function custom_cents_price_html( $price, $product ){

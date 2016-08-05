@@ -82,6 +82,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 							// Meta data
 							echo WC()->cart->get_item_data( $cart_item );
 
+
+							echo  $_product->post->post_excerpt;
+
 							// Backorder notification
 							if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
 								echo '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>';
@@ -132,9 +135,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 		do_action( 'woocommerce_cart_contents' );
 		?>
-		<tr>
-			<td colspan="6" class="actions">
-
+		<?php do_action( 'woocommerce_after_cart_contents' ); ?>
+	</tbody>
+</table>
+		<div class="cart_cupon_table">
 				<?php if ( wc_coupons_enabled() ) { ?>
 					<div class="coupon">
 
@@ -144,26 +148,25 @@ do_action( 'woocommerce_before_cart' ); ?>
 					</div>
 				<?php } ?>
 
-				<input type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />
 
 				<?php do_action( 'woocommerce_cart_actions' ); ?>
 
 				<?php wp_nonce_field( 'woocommerce-cart' ); ?>
-			</td>
-		</tr>
+		</div>
 
-		<?php do_action( 'woocommerce_after_cart_contents' ); ?>
-	</tbody>
-</table>
+		
 
 <?php do_action( 'woocommerce_after_cart_table' ); ?>
+<div class="cart-collaterals">
+	<input type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />
+	<div class="clearfix"></div>
+	<?php do_action( 'woocommerce_cart_collaterals' ); ?>
+
+
+</div>
 
 </form>
 
-<div class="cart-collaterals">
 
-	<?php do_action( 'woocommerce_cart_collaterals' ); ?>
-
-</div>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>

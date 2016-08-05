@@ -2,9 +2,85 @@
   @extend .container;
 }
 
-.cart-item {
+.cart_totals h2 {
+	display: none;
+}
+
+.cart_cupon_table {
+	@extend .col-md-6;
+}
+
+.cart-collaterals {
+	@extend .helvetica;
+	@extend .texto-cinza;
+	text-transform: uppercase;
+	@extend .col-md-6;
+}
+
+.cart-collaterals table.shop_table_responsive tbody tr {
+	border-bottom: 1px dashed #939597;
+    padding: 10px;
+    margin-top: 20px;
+    height: 55px;
+}
+
+.cart-collaterals .cart_totals {
+	width : auto !important;
+}
+
+
+.cart-collaterals table.shop_table_responsive tr td {
+	padding: 10px !important;
+}
+
+.cart-collaterals table.shop_table_responsive tbody th {
+	font-size : 24px;
+}
+
+.cart-collaterals .button {
+	width: auto;
+    border: 0px;
+    padding: 17px;
+    @extend .helvetica;
+    float: right;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-radius : 10px;
+	background-color: #b74164;
+	color : #fff;
+	font-size : 17px !important;
+}
+
+.wc-proceed-to-checkout {
+	margin-top: 20px;
+}
+
+
+.cart-collaterals input[type="submit"]:disabled {
+    background: #f3f3f4;
+    color: #939597;
+    margin: 0px;
+}
+
+
+.cart-page tr.shipping p {
+	width: 280px !important;
+	text-transform: none !important;
+}
+
+.cart_item {
 	@extend .row-centered;
 	@extend .row;
+	border-bottom : 1px dashed #939597 !important;
+}
+
+.shipping-calculator-button {
+	background : #f3f3f4;
+	border-bottom : 4px solid #939597;
+	color : #939597;
+	padding : 10px;
+	display: inline-block;
+	border-radius : 10px;
 }
 
 .product-remove .remove {
@@ -57,15 +133,37 @@ table.cart td.product-subtotal {
 }		
 .woocommerce-cart .product-name a {
 	@extend .texto-rosa;
-	@extend .helvetica;
-	border-radius  : 0px 20px 20px 0;
-	border : 1px solid #939597;
+	@extend .hugs;
 	border-left : 0px;
-	padding : 20px 20px 20px 20px;
+	padding : 00px 20px 0px 0px;
 	width : 100%;
 	display: block;
-	height : 120px;
 	text-align: left;
+	font-size: 29px;
+}
+
+.product-name p {
+	@extend .helvetica;
+	@extend .texto-cinza;
+	text-align : left !important;
+	font-size: 12px;
+	line-height : 14px !important;
+}
+
+table.shop_table_responsive dd {
+	margin-bottom : 0px !important;
+}
+
+table.shop_table_responsive dt, 
+table.shop_table_responsive dd p {
+	text-align : left;
+	@extend .helvetica;
+	color : #b74164 !important;
+	margin-bottom : 0px !important;
+}
+
+dt.variation-Selecioneacor{
+	display: none;
 }
 
 .woocommerce-cart .quantity {
@@ -120,7 +218,7 @@ table.cart td.product-subtotal {
 	border: 1px solid #939597 !important;
     border-radius: 14px;
     height : 175px;
-    @extend .col-md-4;
+    @extend .col-md-12;
     padding-top : 40px;
 }
 

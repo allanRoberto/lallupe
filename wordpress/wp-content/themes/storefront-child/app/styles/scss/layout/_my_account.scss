@@ -1,3 +1,26 @@
+ .woocommerce-account .woocommerce-MyAccount-content p {
+   background: transparent;
+ }
+
+ .woocommerce-account .woocommerce-MyAccount-content p label {
+ 	@extend .helvetica;
+ 	@extend .texto-cinza;
+ }
+
+
+ .woocommerce-account .woocommerce-MyAccount-content .input-text {
+ 	@extend .form-control;
+ } 
+
+.woocommerce-account .button {
+	background: #b74164;
+	padding: 10px;
+	border-radius : 10px;
+	border : 0px !important;
+	text-transform: uppercase;
+	@extend .helvetica;
+}
+
 .woocommerce-MyAccount-navigation {
 	@extend .col-md-4;
 }

@@ -1,5 +1,135 @@
 
 /* Página do produto */
+.single-top-add-to-cart {
+  @extend .col-md-6;
+}
+.gfield {
+	list-style:none;
+}
+.wc-default-select {
+	@extend .form-control;
+}
+
+
+.select2-container .select2-selection--single,
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+	height : 35px !important;
+	line-height : 30px !important;
+	color : #939597 !important;
+}
+
+.reset_variations {
+    background: #b74164;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 0px !important;
+    display:none;
+    text-align: center;
+    @extend .col-md-12;
+}
+
+.reset_variations:hover {
+	color : #f3f3f4;
+	text-decoration: none;
+}
+
+.color-name {
+	border-top: 1px dashed #939597;
+	margin-top: 20px;
+	padding-top : 20px;
+}
+
+.variations_form.cart {
+	width: 100% !important;
+}
+
+.single_variation_wrap {
+	@extend .col-md-12;
+	padding : 0px !important;
+}
+
+.gform_variation_wrapper {
+	padding : 0px !important;
+	color : #939597;
+}
+
+.gform_variation_wrapper .product_totals {
+	display: none;
+}
+
+.gfield_radio li {
+	float: left;
+	list-style : none;
+	margin : 3px;
+}
+
+.gfield_radio li input[type="radio"] {
+	display: none;
+}
+
+.ginput_container_text input[type="text"] {
+	@extend .form-control;
+}
+
+.gfield_radio li label {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	text-indent: -9999px;
+	width: 40px;
+	height: 40px;
+}
+
+.gfield_radio li label:before {
+  content: "";
+  display: inline-block;
+  display: block;
+  margin-right: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  background-color: #aaa;
+  height : 40px;
+  width : 40px;
+  border-radius : 50px;
+  border : 3px solid #ddd;    
+}
+
+
+.gfield_radio li input[value="Azul"] + label:before {
+	background: #15085a;
+}
+
+.gfield_radio li input[value="Preto"] + label:before {
+	background: #000;
+}
+
+.gfield_radio li input[value="Branco"] + label:before {
+	background: #fff;
+}
+
+.gfield_radio li input[value="Vermelho"] + label:before {
+	background: #f32319;
+}
+
+.gfield_radio li input[value="Rosa claro"] + label:before {
+	background: #15085a;
+}
+
+.gfield_radio li input[value="Pink"] + label:before {
+	background: #C02072;
+}
+
+.gfield_radio li input[value="Verde claro"] + label:before {
+	background: #83e1d5;
+}
+
+
+.gfield_radio li input[type="radio"]:checked + label:before {
+    border-color : #00AC7F;
+}
 
 .swatch-wrapper, div.swatch-wrapper.selected, .swatch-wrapper a {
 	border-radius : 50px;
@@ -212,6 +342,7 @@
 	position: relative;
 	text-align : right !important;
 	margin-right : 10px;
+	top : -30px;
 }
 
 .single.fswp_installments_price .price.fswp_calc .fswp_installment_prefix {
@@ -280,7 +411,7 @@
   text-align: left;
   padding-right: 0px !important;
 }
-
+	
 .single_add_to_cart_button {
 	font-family: 'hugs_and_kisses_xoxo_demoRg';
 	font-size : 40px;
@@ -310,14 +441,36 @@
 }
 
 .quantity {
-	@extend .col-md-2;
-	@extend .col-md-offset-10;
+	@extend .col-md-4;
+	@extend .col-md-offset-8;
 	border: 1px solid #ccc;
     padding: 5px 10px;
     border-radius: 50px;
     height: 40px;
     line-height: 27px;
 }
+
+.line-separator-price {
+	border-top : 1px dashed #939597;
+	width: 100%;
+	display: inline-block;
+    margin: 20px 0 5px;
+}
+.single-product .single_add_to_cart_button {
+	@extend .col-md-6;
+	@extend .col-md-offset-6;
+    background-color : #b74164;
+	text-align: center;
+	margin-top : 10px;
+	color: #fff;
+	border-radius : 10px;
+	border-bottom : 5px solid #88374f; 
+	line-height: 50px;
+    font-size: 31px;
+    margin-bottom: 10px !important;
+    padding-top: 5px;
+    padding-bottom: 0px;
+} 
 
 .quantity input[type="number"] {
 	border : 0px;
@@ -335,14 +488,11 @@
 	text-align: left !important;
 }
 
-.gform_variation_wrapper {
-	@extend .col-md-12;
-	padding-right : 0px !important;
-	margin-bottom : 10px;
+.single-product div.product table.variations {
+	width: 100%;
 }
 
 .variations  {
-	@extend .col-md-6;
 	margin-top : 20px !important;
 }
 
@@ -540,7 +690,7 @@ ul.products li.product img {
 		float: left;
 		margin-bottom: 5px;
 	}
-	ins .price-number {
+	 .price-number {
 		margin: 0px;
    	 	text-decoration: none;
 	    background: #B74164 !important;
@@ -577,22 +727,22 @@ ul.products li.product img {
 	}
 
 
-	ins .price-number .amount {
+	.price-number .amount {
 		font-size: 45px;
 	}
 
-	ins .price-number .cents {
+	.price-number .cents {
 		font-size: 14px;
 	    top: -13px;
 	    position: relative;
 	}
 
-	ins .price-number ins .woocommerce-Price-currencySymbol {
+	.price-number ins .woocommerce-Price-currencySymbol {
 		top: -25px;
 		left: 8px;
 	}
 
-	ins .price-number .woocommerce-Price-currencySymbol {
+	.price-number .woocommerce-Price-currencySymbol {
 	  font-size: 11px !important;
 	  top: -2px;
 	  position: relative;
