@@ -111,6 +111,11 @@
 					<div class="col-md-1 hidden-xs">
 						<ul class="social-header">
 							<li class="item-social-header">
+								<a class="twitter-header" href="https://twitter.com/lallupeoficial" title="Twitter" target="_BLANK">
+									<i class="sprite icon-header-twitter"></i>
+								</a>
+							</li>
+							<li class="item-social-header">
 								<a class="facebook-header" href="https://www.facebook.com/lallupe/" title="Facebook" target="_BLANK">
 									<i class="sprite icon-header-facebook"></i>
 								</a>
