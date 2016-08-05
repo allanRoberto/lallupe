@@ -33,7 +33,6 @@ function hide_coupon_field_on_checkout( $enabled ) {
 	return $enabled;
 }
 add_filter( 'woocommerce_coupons_enabled', 'hide_coupon_field_on_checkout' );
-
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
   
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );

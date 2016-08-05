@@ -6,6 +6,8 @@
 
 	  $(document).ready(function() {
 		$(".wc-default-select").select2();
+		$('.dropdown-toggle').dropdown();
+
 	  });
 	  
 
