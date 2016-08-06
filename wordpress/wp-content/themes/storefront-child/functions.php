@@ -23,6 +23,62 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
 remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation_add_to_cart_button', 20);
 
+
+//Adding Registration fields to the form 
+
+add_action( 'register_form', 'adding_custom_registration_fields' );
+function adding_custom_registration_fields( ) {
+
+	//lets make the field required so that i can show you how to validate it later;
+	$firstname = empty( $_POST['firstname'] ) ? '' : $_POST['firstname'];
+	$lastname  = empty( $_POST['lastname'] ) ? '' : $_POST['lastname'];
+	$phone = empty( $_POST['phone'] ) ? '' : $_POST['phone'];
+	?>
+	<div class="line-separator-register"></div>
+	<div class="form-row form-row-wide">
+		<label for="reg_firstname"><?php _e( 'First Name', 'woocommerce' ) ?><span class="required">*</span></label>
+		<input type="text" class="input-text" name="firstname" id="reg_firstname" size="30" value="<?php echo esc_attr( $firstname ) ?>" />
+	</div>
+	<div class="form-row form-row-wide">
+		<label for="reg_lastname"><?php _e( 'Last Name', 'woocommerce' ) ?><span class="required">*</span></label>
+		<input type="text" class="input-text" name="lastname" id="reg_lastname" size="30" value="<?php echo esc_attr( $lastname ) ?>" />
+	</div>
+	<?php
+}
+
+//Validation registration form  after submission using the filter registration_errors
+add_filter( 'woocommerce_registration_errors', 'registration_errors_validation' );
+
+/**
+ * @param WP_Error $reg_errors
+ *
+ * @return WP_Error
+ */
+function registration_errors_validation( $reg_errors ) {
+
+	if ( empty( $_POST['firstname'] ) || empty( $_POST['lastname'] ) ) {
+		$reg_errors->add( 'Campo obrigatório.', __( 'Por favor preencha todos os campos.', 'woocommerce' ) );
+	}
+
+	return $reg_errors;
+}
+
+//Updating use meta after registration successful registration
+add_action('woocommerce_created_customer','adding_extra_reg_fields');
+
+function adding_extra_reg_fields($user_id) {
+	extract($_POST);
+	update_user_meta($user_id, 'first_name', $firstname);
+	update_user_meta($user_id, 'last_name', $lastname);
+	update_user_meta($user_id, 'phone', $phone);
+	update_user_meta($user_id, 'billing_first_name', $firstname);
+	update_user_meta($user_id, 'shipping_first_name', $firstname);
+	update_user_meta($user_id, 'billing_last_name', $lastname);
+	update_user_meta($user_id, 'shipping_last_name', $lastname);
+	update_user_meta($user_id, 'billing_phone', $phone);
+}
+
+
 // hide coupon field on checkout page
 function hide_coupon_field_on_checkout( $enabled ) {
  

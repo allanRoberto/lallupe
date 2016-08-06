@@ -1,3 +1,71 @@
+.container-login {
+	width: 70%;
+	margin:60px auto !important;
+	display: table;
+}
+
+.woocommerce-error, 
+.woocommerce-info, 
+.woocommerce-message, 
+.woocommerce-noreviews {
+	margin-top : 50px;
+}
+
+.woocommerce-error, 
+.woocommerce-info {
+	background: #b74164 !important;
+	padding: 10px;
+	border-radius : 10px !important;
+	border : 0px !important;
+	text-transform: uppercase;
+}
+
+.woocommerce-account form.login,
+.woocommerce-account form.lost_reset_password,
+.woocommerce-account form.register {
+	border : 2px solid #f3f3f4;
+	border-radius : 10px;
+	padding : 15px 20px;
+}
+
+.woocommerce-account form.login input[type="text"], 
+.woocommerce-account form.login input[type="email"],
+.woocommerce-account form.login input[type="password"],
+.woocommerce-account form.register input[type="text"], 
+.woocommerce-account form.register input[type="email"],
+.woocommerce-account form.register input[type="password"],
+.woocommerce-account form.lost_reset_password input[type="text"], 
+.woocommerce-account form.lost_reset_password input[type="email"],
+.woocommerce-account form.lost_reset_password input[type="password"] {
+	width: 100%;
+	border-radius : 10px;
+	border: 2px solid #f3f3f4;
+	height : 35px;
+	padding-left : 10px;
+}
+
+.woocommerce-account form.login label,
+.woocommerce-account form.register label, 
+.woocommerce-account form.lost_reset_password label {
+	@extend .helvetica;
+	@extend .texto-cinza;
+	margin-top : 10px;
+}
+
+.woocommerce-account form.login .button,
+.woocommerce-account form.register .button,
+.woocommerce-account form.lost_reset_password .button {
+	margin-top : 20px;
+	color : #fff;
+	text-transform: uppercase;
+}
+
+.woocommerce-account form.login .lost-password a {
+	text-decoration: none;
+	@extend .texto-cinza;
+}
+
+
  .woocommerce-account .woocommerce-MyAccount-content p {
    background: transparent;
  }
@@ -21,6 +89,16 @@
 	@extend .helvetica;
 }
 
+.woocommerce-account .button.disabled {
+	background : #939597;
+}
+
+
+.line-separator-register {
+	border-top: 2px dashed #f3f3f4;
+	width: 100%;
+	margin-top : 15px;
+}
 .woocommerce-MyAccount-navigation {
 	@extend .col-md-4;
 }

@@ -18,38 +18,18 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-if(!is_user_logged_in()) { ?>	
-	<div class="login-access">	
-		<div class="row">
-		    <div class="col-md-12">
-				<?php woocommerce_breadcrumb(); ?>
-			</div>
-		</div>
-		
-		<div class="row">
-			<div class="col-md-12">
-				<h1 class="title-primary">Já é cliente ? </h1>
-			</div>	
-		</div>
-		
-		<div class="row">
-			<div class="col-md-10 col-md-offset-2">
-				<?php echo do_shortcode('[lwa registration=0]');?>
-			</div>
-		</div>
-		
-		<div class="row">
-			<div class="col-md-12">
-				<h1 class="title-primary">Primeira compra ?</h1>
-			</div>	
-			<div class="col-md-10 col-md-offset-2">
-				<?php echo do_shortcode('[lwa registration=1]');?>
-			</div>
-		</div>
-	</div>
-<?} else {	?>
 
-<form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data"> ?>
+wc_print_notices();
+do_action( 'woocommerce_before_checkout_form', $checkout ); 
+
+// If checkout registration is disabled and not logged in, the user cannot checkout
+if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_user_logged_in() ) {
+	echo apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'woocommerce' ) );
+	return;
+}
+?>
+<div id="order_review_heading"></div>
+<form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -88,38 +68,14 @@ if(!is_user_logged_in()) { ?>
 
 
 <?php
-//wc_print_notices();
-do_action( 'woocommerce_before_checkout_form', $checkout );
-// If checkout registration is disabled and not logged in, the user cannot checkout
-if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_user_logged_in() ) {
-	//echo apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'woocommerce' ) );
-	return;
-}
-?>
 
+ if ( sizeof( $checkout->checkout_fields ) > 0 ) : ?>
 
-
-	<?php if ( sizeof( $checkout->checkout_fields ) > 0 ) : ?>
-
-		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
-
-		<div class="col2-set" id="customer_details">
-			<div class="col-1">
-				
-			</div>
-
-			<div class="col-2">
-				<?php //do_action( 'woocommerce_checkout_shipping' ); ?>
-			</div>
-		</div>
-
-		<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
-
-	<?php endif; ?>
-
-
+	<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
+	<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
+<?php endif; ?>
 
 
 </form>
 
-<?php do_action( 'woocommerce_after_checkout_form', $checkout ); } ?>
+<?php do_action( 'woocommerce_after_checkout_form', $checkout );  ?>
