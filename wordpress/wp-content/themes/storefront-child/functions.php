@@ -11,6 +11,18 @@ function artezzo_remove_scripts(){
     wp_dequeue_script('wc-gravityforms-product-addons');
 }
 
+function wpse_131562_redirect() {
+    if (
+        ! is_user_logged_in()
+        && (is_checkout())
+    ) {
+        // feel free to customize the following line to suit your needs
+        wp_redirect(site_url('minha-conta'));
+        exit;
+    }
+}
+add_action('template_redirect', 'wpse_131562_redirect');
+
 
 remove_action( 'storefront_footer', 'storefront_credit', 50);
 

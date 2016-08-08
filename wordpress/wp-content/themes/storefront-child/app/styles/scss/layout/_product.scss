@@ -627,6 +627,18 @@
 		@extend .sprite;
 		text-indent : -99999px;
 	}
+	
+	.sale-carousel .owl-next  {
+		@extend .icon-arrow-blue-right;
+		@extend .sprite;
+		text-indent : -99999px;
+	}
+
+	.sale-carousel .owl-prev  {
+		@extend .icon-arrow-blue-left;
+		@extend .sprite;
+		text-indent : -99999px;
+	}
 
 	.owl-next {
 		@extend .icon-arrow-right;

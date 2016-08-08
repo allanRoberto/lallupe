@@ -19,6 +19,10 @@
 	text-transform: uppercase;
 }
 
+.blockUI.blockOverlay{
+  background: rgba(255,255,255,0.4) !important;
+}
+
 .login-access {
 	margin-bottom : 100px;
 }

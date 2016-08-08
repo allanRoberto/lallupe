@@ -2,6 +2,123 @@ body {
 	font-family : "Helvetica Neue", sans-serif;
 }
 
+#kudobuzz_slider_widget div {
+	font-family : "Helvetica Neue", sans-serif !important;
+	font-size: 20px !important;
+	line-height : 25px !important;
+	color : #939597 !important;
+
+}
+
+.kudobuzz_widget_reviewer_name, .kudobuzz_widget_reviewer_name {
+	display : none !important;
+}
+
+.kudobuzz_widget_reviewer_frtletter.kudobuzz_classic_widget_image_src {
+	width : 100px !important;
+	height : 100px !important;
+	background-size : cover !important;
+	border-radius : 50px !important;
+	margin-bottom  : 50px !important;
+	display : block;
+	top : -50px !important;
+	position: relative;
+}
+
+.kudobuzz_widget_review_rating {
+	margin-top : 130px !important;
+}
+
+#kudobuzz_neptune_widget, .powered_by_kudobuzz {
+	display: none !important; 
+}
+
+#kudobuzz_slider_widget .kbz_next, #kudobuzz_slider_widget .kbz_prev {
+	font-size : 42px !important;
+	background: transparent  !important;
+}
+
+#kudobuzz_slider_widget .kbz_next, 
+#kudobuzz_slider_widget .kbz_prev {
+	right : -15px !important;
+}
+
+#kudobuzz_slider_widget .kbz_prev,
+#kudobuzz_slider_widget .kbz_next {
+	top : 300px !important;
+}
+
+.title-blue {
+	color : #304058 !important;
+}
+
+.input-more,
+.input-minus {
+	float: right;
+    background: #929597;
+    color: #fff;
+    padding: 0px 6px;
+    line-height: 20px;
+    border-radius: 3px 20px 3px 3px;
+    right: -16px;
+    position: relative;
+    top: -35px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.input-minus {
+	top: -14px;
+    right: -36px;
+    border-radius: 3px 3px 20px;
+    line-height: 19px;
+    text-align: left;
+    width: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.qty {
+	border : 0px !important;
+}
+
+
+.kbz_next:before, .kudobuzz_arrow_right_icon:before, .kudobuzz_next_icon:before, .kudobuzz_rightarrow_icon:before,
+#kudobuzz_slider_widget .kbz_next:before, #kudobuzz_slider_widget .kbz_prev:before {
+	font-size : 35px !important;
+	background: #b74164;
+	color : #fff !important;
+	right : 20px !important; 
+	border-radius : 50px !important;
+}
+
+#kudobuzz_slider_widget {
+	@extend .helvetica;
+	@extend .texto-cinza;
+	margin : 90px 0;
+}
+
+.kudobuzz_widget_reviewer_image {
+	width: 90px !important;
+	top : -50px;
+	position: relative;
+}	
+
+
+#kudobuzz_slider_widget img{
+	width: 50px !important;
+}
+
+.kudobuzz_slider_widget_user_info_2 div {
+	display : table !important;
+	float : left !important;
+	margin-top : 150px !important;
+}
+
+.testimontial .title-primary {
+	margin-top: 70px;
+	margin-bottom : -30px;
+}
 .row-centered {
    display: flex;
    align-items: center;

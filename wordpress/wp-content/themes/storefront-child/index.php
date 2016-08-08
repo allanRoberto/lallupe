@@ -235,9 +235,9 @@ get_header(); ?>
 					<?php echo do_shortcode('[featured_products per_page="5" columns="4"]');?>
 				</div>
 			</div>
-			<div class="recent-products carousel-products row">
+			<div class="recent-products carousel-products sale-carousel row">
 				<div class="col-md-12">		
-					<h1 class="title-carousel-products title-product-recents">Novidades <span class="navigation-carousel"></span></h1>
+					<h1 class="title-carousel-products title-product-recents title-blue">+ Vendidos <span class="navigation-carousel"></span></h1>
 					<?php echo do_shortcode('[featured_products per_page="5" columns="4"]');?>
 				</div>
 			</div>
@@ -248,7 +248,8 @@ get_header(); ?>
 			<div class="row">
 				<div class="col-md-7">
 					<h1 class="title-primary">Quem comprou gostou !</h1>
-					<div class="list-testimontial">
+					<div class="list-testimontials">
+						<div id='kudobuzz_slider_widget'></div>
 					</div>
 				</div>
 			</div>

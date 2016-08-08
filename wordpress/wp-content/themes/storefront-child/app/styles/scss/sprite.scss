@@ -17,9 +17,10 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 <i class="icon icon-home"></i>
 */
 
+
 .sprite {
-  background-image: url(../images/sprite.png);
-  display : inline-block;
+    background-image: url(../images/sprite.png);
+    display: inline-block;
 }
 
 .icon-arrow-blue-left {
@@ -89,8 +90,8 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-delete-product {
   background-position: -594px -224px;
-  width: 57px;
-  height: 56px;
+  width: 55px;
+  height: 53px;
 }
 .icon-header-cart {
   background-position: -536px -224px;
@@ -98,7 +99,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   height: 58px;
 }
 .icon-header-email {
-  background-position: -696px -248px;
+  background-position: -694px -248px;
   width: 26px;
   height: 17px;
 }
@@ -133,12 +134,12 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   height: 35px;
 }
 .icon-header-twitter {
-  background-position: -696px -224px;
+  background-position: -694px -224px;
   width: 22px;
   height: 24px;
 }
 .icon-list-favorite {
-  background-position: -651px -224px;
+  background-position: -649px -224px;
   width: 45px;
   height: 46px;
 }
