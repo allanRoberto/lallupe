@@ -21,6 +21,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+wc_get_order_statuses();
 ?>
 <p class="order-status"><span class="status-order">Status do pedido  : <?php echo wc_get_order_status_name( $order->get_status() ); ?></span></p>
 <p class="info-order">

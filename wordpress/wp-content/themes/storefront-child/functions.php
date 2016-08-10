@@ -23,6 +23,83 @@ function wpse_131562_redirect() {
 }
 add_action('template_redirect', 'wpse_131562_redirect');
 
+function custom_checkbox_checker () 
+	{
+		if ( is_checkout() ) 
+		{
+			wp_enqueue_script( 'jquery' ); ?>
+			
+			jQuery(document).ready( function (e) 
+			{
+				var $ = jQuery;
+				if ( typeof wc_checkout_params === ‘undefined’ )
+				return false;
+
+				var updateTimer,dirtyInput = false,xhr;
+
+				function update_shipping(billingstate,billingcountry) 
+				{
+
+					if ( xhr ) xhr.abort();
+
+					$( '#order_methods, #order_review' ).block({ message: null, overlayCSS: { background: '#fff url(' + wc_checkout_params.ajax_loader_url + ') no-repeat center', backgroundSize:'16px 16px', opacity: 0.6 } });
+
+						var data = {
+
+						action: 'woocommerce_update_order_review',
+
+						security: wc_checkout_params.update_order_review_nonce,
+
+						billing_state: billingstate,
+
+						billing_country : billingcountry,
+
+						post_data: $( 'form.checkout' ).serialize()
+
+						};
+
+						xhr = $.ajax({
+
+						type: 'POST',
+
+						url: wc_checkout_params.ajax_url,
+
+						data: data,
+
+						success: function( response ) {
+
+						var order_output = $(response);
+
+						$( '#order_review' ).html( response['fragments']['.woocommerce-checkout-review-order-table']+response['fragments']['.woocommerce-checkout-payment']);
+
+						$('body').trigger('updated_checkout');
+
+						},
+
+						error: function(code){
+
+						console.log('ERROR');
+
+						}
+
+						});
+
+				}
+
+			jQuery('.state_select').change(function(e, params){
+
+			update_shipping(jQuery(this).val(),jQuery('#billing_country').val());
+
+			});
+		});
+
+    
+<?php }
+
+    }
+
+    add_action( 'wp_footer', 'custom_checkbox_checker', 50 );
+
 
 remove_action( 'storefront_footer', 'storefront_credit', 50);
 

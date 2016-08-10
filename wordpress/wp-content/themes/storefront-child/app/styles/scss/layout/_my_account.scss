@@ -134,6 +134,15 @@
 	display: none;
 }
 
+.navigation-status {
+	@extend .col-md-12;
+}
+
+.navigation-status li {
+  float: left;
+}
+
+
 .status-order {
 	background: #f3f3f4;
 	color : #939597;
