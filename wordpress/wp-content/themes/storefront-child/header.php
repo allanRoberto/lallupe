@@ -59,7 +59,6 @@
 						</div>
 						<div class="col-md-2 col-md-offset-8">
 							<ul class="shop-header">
-								<li class="list-favorite"><i class="sprite icon-header-list-favorite"></i><?php /* Aqui vem a lista de desejos */?></li>
 								<?php do_action('storefront_child_cart_header'); ?>
 							</ul>
 						</div>

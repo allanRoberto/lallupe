@@ -8,8 +8,8 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area container">
+		<h1 class="title-primary" style="margin-top: 60px;">Precisa de uma ajudinha ?</h1>
 		<main id="main" class="site-main questions-template" role="main">
-
 			<div class="row">
 				<div class="col-md-4">
 					<?php
