@@ -316,6 +316,9 @@ function lallupe_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'lallupe_scripts' );
 
+register_nav_menus( array(
+				'sidebar-menu'		=> __( 'Sidebar Menu', 'storefront' ),
+			) );
 
 if( function_exists('acf_add_options_page') ) {
 

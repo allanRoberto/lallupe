@@ -32,7 +32,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h4>CNPJ 00.000.000/0001-00 | www.lallupe.com.br | TODOS OS DIREITOS RESERVADOS</h4>
+					<h4>CNPJ 25.308.764/0001-70 | www.lallupe.com.br | TODOS OS DIREITOS RESERVADOS | Caixa Postal 78475 São Paulo - SP CEP 01401-970</h4>
 					<h4>As fotos aqui veiculadas, logotipos e marca são de propriedade do site. Desenvolvimento <a href="http://saintpaulcomunicacao.com.br" target="_BLANK">Saint Paul Comunicação</a>
 				</div>
 			</div>
