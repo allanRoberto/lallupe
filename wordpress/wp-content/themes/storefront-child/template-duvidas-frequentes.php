@@ -11,18 +11,18 @@ get_header(); ?>
 		<main id="main" class="site-main questions-template" role="main">
 
 			<div class="row">
-				<div class="col-md-2">
+				<div class="col-md-4">
 					<?php
 					 	wp_nav_menu(
 							array(
 								'theme_location'	=> 'sidebar-menu',
-								'container_class'	=> 'woocommerce-MyAccount-navigation',
+								'container_class'	=> 'woocommerce-MyAccount-navigation sidebar-menu',
 								'container'         => 'nav',
 							)
 						);
 					?>
 				</div>
-				<div class="col-md-10">
+				<div class="col-md-8">
 
 					<?php while ( have_posts() ) : the_post();
 

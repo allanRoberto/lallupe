@@ -451,3 +451,33 @@ p.order-again {
 .woocommerce-MyAccount-content p a {
 	color : #f3f3f4;
 }
+
+.woocommerce-MyAccount-navigation.sidebar-menu {
+	width : 100%;
+}
+
+.questions-template {
+  margin-top : 50px;
+  @extend .helvetica;
+  @extend .texto-cinza;
+}
+
+.questions-template h1 {
+	text-transform: uppercase;
+	font-size : 19px;
+}
+
+
+.questions-template h2 {
+	text-transform: uppercase;
+	font-size : 17px;
+}
+
+.questions-template p {
+	margin-bottom : 20px;
+}
+
+.questions-template strong {
+	color : #000 !important;
+	text-transform: uppercase !important;
+}

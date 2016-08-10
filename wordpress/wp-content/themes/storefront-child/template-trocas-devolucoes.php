@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Duvidas frequentes		
+ * Template Name: Trocas		
  *
  * @package storefront
  */
