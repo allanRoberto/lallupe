@@ -35,7 +35,7 @@
 }
 
 .cart-collaterals table.shop_table_responsive tbody th {
-	font-size : 24px;
+	font-size : 19px;
 }
 
 .cart-collaterals .button {
@@ -90,6 +90,31 @@
 	@extend .row-centered;
 	@extend .row;
 	border-bottom : 1px dashed #939597 !important;
+}
+
+
+#shipping_method li {
+	width: 100%;
+	display : inline-block;
+	margin : 0 0 10px 0;
+	padding-bottom : 10px;
+	border-bottom : 2px solid #f3f3f4;
+}
+
+#shipping_method li:last-child {
+	border-bottom : 0px !important;
+}
+
+#shipping_method label {
+	font-size: 12px;
+	display : inline;
+}
+
+#shipping_method label .woocommerce-Price-amount.amount {
+	width : 100%;
+	float: left;
+	color : #000;
+	font-size : 16px;
 }
 
 .shipping-calculator-button {
