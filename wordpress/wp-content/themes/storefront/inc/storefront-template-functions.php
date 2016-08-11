@@ -93,7 +93,7 @@ if ( ! function_exists( 'storefront_footer_widgets' ) ) {
 
 		if ( $widget_columns > 0 ) : ?>
 
-			<section class="footer-widgets col-<?php echo intval( $widget_columns ); ?> fix">
+			<section class="footer-widgets flexbox-col col-<?php echo intval( $widget_columns ); ?> fix">
 
 				<?php
 				$i = 0;
