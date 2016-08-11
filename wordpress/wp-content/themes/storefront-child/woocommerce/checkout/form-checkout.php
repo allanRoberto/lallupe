@@ -1,19 +1,3 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Gist
- @allanRoberto
- Unwatch 1
-  Star 0
-  Fork 0 allanRoberto/lallupe
- Code  Issues 0  Pull requests 0  Wiki  Pulse  Graphs  Settings
-Tree: 324b80937f Find file Copy pathlallupe/wordpress/wp-content/themes/storefront-child/woocommerce/checkout/form-checkout.php
-324b809  3 days ago
-@allanRoberto allanRoberto Atualização Lallupe sábado
-1 contributor
-RawBlameHistory     80 lines (70 sloc)  2.54 KB
 <?php
 /**
  * Checkout Form
@@ -91,5 +75,3 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 </form>
 
 <?php do_action( 'woocommerce_after_checkout_form', $checkout );  ?>
-Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help
