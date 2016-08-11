@@ -11,7 +11,21 @@ function wc_ninja_remove_password_strength() {
 }
 add_action( 'wp_print_scripts', 'wc_ninja_remove_password_strength', 100 );
 
-
+/*
+ * Change the order of the endpoints that appear in My Account Page - WooCommerce 2.6
+ * The first item in the array is the custom endpoint URL - ie http://mydomain.com/my-account/my-custom-endpoint
+ * Alongside it are the names of the list item Menu name that corresponds to the URL, change these to suit
+ */
+function wpb_woo_my_account_order() {
+	$myorder = array(
+		'orders'             => __( 'Orders', 'woocommerce' ),
+		'edit-account'       => __( 'Alterar dados', 'woocommerce' ),
+		'edit-address'       => __( 'Endereços', 'woocommerce' ),
+		'customer-logout'    => __( 'Sair', 'woocommerce' ),
+	);
+	return $myorder;
+}
+add_filter ( 'woocommerce_account_menu_items', 'wpb_woo_my_account_order' );
 
 function wpse_131562_redirect() {
     if (

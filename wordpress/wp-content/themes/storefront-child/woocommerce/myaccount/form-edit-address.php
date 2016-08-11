@@ -30,7 +30,7 @@ do_action( 'woocommerce_before_edit_account_address_form' ); ?>
 
 	<form method="post">
 
-		<h3><?php echo apply_filters( 'woocommerce_my_account_edit_address_title', $page_title ); ?></h3>
+		<h1 class="title-primary"><?php echo apply_filters( 'woocommerce_my_account_edit_address_title', $page_title ); ?></h1>
 
 		<?php do_action( "woocommerce_before_edit_address_form_{$load_address}" ); ?>
 

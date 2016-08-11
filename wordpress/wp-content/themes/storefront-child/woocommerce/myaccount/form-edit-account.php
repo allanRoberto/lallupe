@@ -25,6 +25,7 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 <form class="woocommerce-EditAccountForm edit-account" action="" method="post">
 
 	<?php do_action( 'woocommerce_edit_account_form_start' ); ?>
+			<h1 class="title-primary">Dados Pessoais</h1>
 
 	<p class="woocommerce-FormRow woocommerce-FormRow--first form-row form-row-first">
 		<label for="account_first_name"><?php _e( 'First name', 'woocommerce' ); ?> <span class="required">*</span></label>
@@ -42,7 +43,7 @@ do_action( 'woocommerce_before_edit_account_form' ); ?>
 	</p>
 
 	<fieldset>
-		<legend><?php _e( 'Password Change', 'woocommerce' ); ?></legend>
+		<h1 class="title-primary">Alterar senha</h1>
 
 		<p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
 			<label for="password_current"><?php _e( 'Current Password (leave blank to leave unchanged)', 'woocommerce' ); ?></label>

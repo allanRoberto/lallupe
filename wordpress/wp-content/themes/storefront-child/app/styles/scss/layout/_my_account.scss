@@ -21,6 +21,9 @@
 	color : #fff !important;
 }
 
+.woocommerce-account #primary{
+	margin: 60px auto;
+}
 .woocommerce-account form.login,
 .woocommerce-account form.lost_reset_password,
 .woocommerce-account form.register {
@@ -66,7 +69,9 @@
 	@extend .texto-cinza;
 }
 
-
+.wc-social-login-profile {
+	display: none;
+}
  .woocommerce-account .woocommerce-MyAccount-content p {
    background: transparent;
  }
@@ -81,13 +86,48 @@
  	@extend .form-control;
  } 
 
+ .woocommerce-Address address {
+ 	@extend .texto-cinza;
+ }
+
+  .woocommerce-edit-address p {
+    color : #939597 !important;
+  }
+ .addresses header.title h1 {
+ 	margin-bottom : 0px !important;
+ }
+  .addresses header.title a {
+  	text-indent: initial !important;
+    width: 100% !important;
+    float: left !important;
+    display: block;
+    height: auto !important;
+    text-align: center;
+    margin-bottom : 18px !important;
+  }
+   .addresses header.title a:before {
+    text-align: center;
+    text-indent: 0;
+    display: inline;
+    margin-right: 10px;   
+    position: relative !important;
+    width: auto !important;
+}
+
 .woocommerce-account .button {
 	background: #b74164;
-	padding: 10px;
+	padding: 10px !important;
 	border-radius : 10px;
 	border : 0px !important;
+    border-bottom : 5px solid #88374f !important;
 	text-transform: uppercase;
 	@extend .helvetica;
+	color : #fff;
+	font-size : 13px !important;
+}
+
+.woocommerce-account .button:hover {
+	text-decoration: none;
 }
 
 .woocommerce-account .button.disabled {
