@@ -48,8 +48,17 @@
     text-transform: uppercase;
     border-radius : 10px;
 	background-color: #b74164;
+	border-bottom : 5px solid #88374f;
 	color : #fff;
-	font-size : 17px !important;
+	font-size : 14px !important;
+	text-decoration: none;
+}
+
+.cart-collaterals .button:hover {
+	text-decoration: none;
+	background: #863b51;
+	border-bottom : 5px solid #b74164;
+
 }
 
 .wc-proceed-to-checkout {
@@ -59,6 +68,7 @@
 
 .cart-collaterals input[type="submit"]:disabled {
     background: #f3f3f4;
+    border-bottom : 5px solid #939597;
     color: #939597;
     margin: 0px;
 }
@@ -89,6 +99,15 @@
 	padding : 10px;
 	display: inline-block;
 	border-radius : 10px;
+	text-transform: uppercase;
+	margin-top : 10px;
+}
+
+.shipping-calculator-button:hover {
+	text-decoration: none;
+	background: #b74164;
+	border-bottom : 5px solid #88374f;
+	color : #fff;
 }
 
 .product-remove .remove {
@@ -232,20 +251,28 @@ dt.variation-Selecioneacor{
 }
 
 .woocommerce-cart .coupon {
-	border: 1px solid #939597 !important;
+	border: 2px solid #f3f3f4 !important;
     border-radius: 14px;
-    height : 175px;
+    height : auto;
     @extend .col-md-12;
     padding-top : 40px;
+    padding-bottom : 50px;
+}
+
+
+.woocommerce-cart .coupon label {
+	@extend .helvetica;
+	@extend .texto-cinza;
+	text-transform: uppercase;
 }
 
 .woocommerce-cart .coupon input[type="text"] {
 	border-radius  : 10px 0px 0px 10px;
 	border-right : 0px !important;
 	border : 1px solid #939597;
-	height : 30px;
+	height : 35px;
 	padding-left : 10px;
-	width : 86%;
+	width : 90%;
 }
 
 .woocommerce-cart .coupon .button {

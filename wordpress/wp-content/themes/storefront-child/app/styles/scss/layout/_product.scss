@@ -1,4 +1,7 @@
 
+
+
+
 /* Página do produto */
 .single-top-add-to-cart {
   @extend .col-md-6;
@@ -145,6 +148,10 @@
 
 .page-title {
 	@extend .title-primary;
+}
+
+.archive.woocommerce-page .content-area {
+	margin-top : 50px;
 }
 
 .archive.woocommerce-page .page-title {
@@ -657,6 +664,7 @@ ul.products li.product h3 {
     margin-bottom: 13px;
     padding-left: 10px;
     font-weight: 100 !important;
+    height : 45px;
 }
 
 ul.products li.product img {

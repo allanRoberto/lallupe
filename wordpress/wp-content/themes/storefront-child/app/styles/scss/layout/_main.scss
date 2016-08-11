@@ -268,9 +268,9 @@ body {
 }
 
 .navigation-carousel {
-	top: -100px;
+	top: -60px;
     position: absolute;
-    right: 0;
+    right: 30px;
 }
 
 .woocommerce-MyAccount-orders {
@@ -480,4 +480,11 @@ p.order-again {
 .questions-template strong {
 	color : #000 !important;
 	text-transform: uppercase !important;
+}
+
+.flexbox-col {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
 }
