@@ -4,12 +4,14 @@ require_once('includes/menu_class.php');
 add_action('storefront_child_cart_header', 'storefront_child_header_cart', 60 );
 add_action( 'storefront_child_search_header', 'storefront_product_search', 40 );
 
-
-add_action( 'wp_enqueue_scripts', 'artezzo_remove_scripts', 20 );
-
-function artezzo_remove_scripts(){
-    wp_dequeue_script('wc-gravityforms-product-addons');
+function wc_ninja_remove_password_strength() {
+	if ( wp_script_is( 'wc-password-strength-meter', 'enqueued' ) ) {
+		wp_dequeue_script( 'wc-password-strength-meter' );
+	}
 }
+add_action( 'wp_print_scripts', 'wc_ninja_remove_password_strength', 100 );
+
+
 
 function wpse_131562_redirect() {
     if (
