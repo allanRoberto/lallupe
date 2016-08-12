@@ -294,6 +294,7 @@ if ( ! function_exists( 'storefront_header_cart' ) ) {
 		?>
 		<li class="cart-header <?php echo esc_attr( $class ); ?>">
 			<a class="cart-header" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="">
+				<span class="counts"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></span>
 				<i class="sprite icon-header-cart"></i> 
 			</a>		
 				<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
