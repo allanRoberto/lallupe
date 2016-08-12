@@ -243,18 +243,7 @@ get_header(); ?>
 			</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	<div class="testimontial">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-7">
-					<h1 class="title-primary">Quem comprou gostou !</h1>
-					<div class="list-testimontials">
-						<div id='kudobuzz_slider_widget'></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 	<div class="newsletters">
 		<div class="container">
 			<div class="row">
