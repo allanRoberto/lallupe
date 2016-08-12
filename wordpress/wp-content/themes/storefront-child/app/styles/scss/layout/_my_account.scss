@@ -180,6 +180,35 @@
 
 .navigation-status li {
   float: left;
+    list-style: none;
+    margin-right: 4%;
+    width: 16%;
+    text-align: center;
+    color: #939597;
+    font-size: 12px;
+}
+
+
+.navigation-status li img {
+	-webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+    filter: grayscale(100%);
+}
+
+
+.navigation-status li.active img, .navigation-status li.active .title-order-status {
+	-webkit-filter: grayscale(0%); /* Chrome, Safari, Opera */
+    filter: grayscale(0%);
+    @extend .texto-rosa;
+    @extend .hugs;
+    font-size : 20px;
+}
+
+.navigation-status li .title-order-status {
+	margin-top: 10px;
+    width: 100%;
+    border-top: 1px dashed #939597;
+    display: block;
+    padding-top: 10px;
 }
 
 

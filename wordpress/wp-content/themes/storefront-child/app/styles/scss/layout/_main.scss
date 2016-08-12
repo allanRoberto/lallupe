@@ -352,7 +352,8 @@ body {
 	background: transparent !important;
 	@extend .helvetica;
 	@extend .texto-cinza;
-	@extend .col-md-12;
+	@extend .col-md-8;
+	@extend .col-md-offset-4;
 }
 
 
