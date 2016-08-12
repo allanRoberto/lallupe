@@ -203,6 +203,10 @@
     font-size : 20px;
 }
 
+.shop_table.customer_details {
+	@extend .col-md-9;
+}
+
 .navigation-status li .title-order-status {
 	margin-top: 10px;
     width: 100%;

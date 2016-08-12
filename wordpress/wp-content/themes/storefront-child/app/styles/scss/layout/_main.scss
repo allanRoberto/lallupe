@@ -341,19 +341,11 @@ body {
   display: block !important;
 }
 
-.woocommerce-view-order h2 {
-	@extend .helvetica;
-	@extend .texto-cinza;
-	font-size : 16px !important;
-	text-transform: uppercase;
-}
-
 .woocommerce-view-order .order_details {
 	background: transparent !important;
 	@extend .helvetica;
 	@extend .texto-cinza;
 	@extend .col-md-9;
-	@extend .col-md-pull-3;
 }
 
 
@@ -415,7 +407,7 @@ body {
 	content : "";
 }
 
-#wc-correios-tracking, .woocommerce-view-order header h2 {
+#wc-correios-tracking, .woocommerce-view-order header h2, .woocommerce-view-order h2 {
 	display: inline-block;
     float: left;
     width: 100%;
@@ -423,6 +415,25 @@ body {
     border-top: 2px solid #F3F3F4;
     margin-top: 20px;
     margin-bottom: 20px;
+    @extend .hugs;
+    @extend .texto-rosa;
+    font-size: 29px;
+}
+
+.woocommerce-view-order .addresses header.title h3 {
+  @extend .helvetica;
+  color : #000;
+  text-transform: uppercase;
+  padding-bottom :5px;
+  margin-bottom :5px;
+  border-bottom: 1px dashed #939597;
+  width: 100%;
+}
+
+
+.woocommerce-view-order address {
+	@extend .texto-cinza;
+	font-size : 13px;
 }
 
 .woocommerce-view-order .shop_table.shop_table_responsive{
