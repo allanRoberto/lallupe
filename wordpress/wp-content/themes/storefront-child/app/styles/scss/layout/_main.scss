@@ -448,6 +448,13 @@ body {
     border-radius: 10px;
 }
 
+.ginput_container_text input[type="text"],
+.ginput_container_email input[type="text"],
+.ginput_container_email input[type="email"],
+.ginput_container textarea {
+	@extend .form-control;
+}
+
 p.info-order, p.order-status {
 	background: transparent !important;
 	margin : 0px !important;
