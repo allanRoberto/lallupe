@@ -173,7 +173,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			case 'Pedido em análise' : ?>
 				<ul class="navigation-status">
 					<li class="order-status- active">
-						<img class="img-responsive" src="<?php echo $template_url ?>/images/order-status-.png"/>
+						<img class="img-responsive" src="<?php echo $template_url ?>/images/order-status-canceled.png"/>
 						<span class="title-order-status">Pedido cancelado</span>
 					</li>
 				</ul>
