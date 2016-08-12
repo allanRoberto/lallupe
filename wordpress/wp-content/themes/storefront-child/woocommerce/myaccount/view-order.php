@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</li>
 			</ul>
 			<?php break;
-		case 'Pagamento em Análise':?>
+		case 'Pagamento em análise':?>
 			<ul class="navigation-status">
 				<li class="order-status-payment-pending active">
 					<img class="img-responsive" src="<?php echo $template_url ?>/images/order-status-payment-pending.png"/>
@@ -74,11 +74,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php break;
 		case 'Pagamento aprovado':?>
 			<ul class="navigation-status">
-				<li class="order-status-payment-pending active">
+				<li class="order-status-payment-pending">
 					<img class="img-responsive" src="<?php echo $template_url ?>/images/order-status-payment-pending.png"/>
 					<span class="title-order-status">Pagamento pendente</span>
 				</li>
-				<li class="order-status-payment-aproved">
+				<li class="order-status-payment-aproved active">
 					<img class="img-responsive" src="<?php echo $template_url ?>/images/order-status-payment-aproved.png"/>
 					<span class="title-order-status">Pagamento aprovado</span>
 				</li>
@@ -98,7 +98,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php break;	
 		case 'Processando pedido':?>
 			<ul class="navigation-status">
-				<li class="order-status-payment-pending active">
+				<li class="order-status-payment-pending">
 					<img class="img-responsive" src="<?php echo $template_url ?>/images/order-status-payment-pending.png"/>
 					<span class="title-order-status">Pagamento pendente</span>
 				</li>
@@ -106,7 +106,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<img class="img-responsive" src="<?php echo $template_url ?>/images/order-status-payment-aproved.png"/>
 					<span class="title-order-status">Pagamento aprovado</span>
 				</li>
-				<li class="order-status-processing">
+				<li class="order-status-processing active">
 					<img class="img-responsive" src="<?php echo $template_url ?>/images/order-status-processing.png"/>
 					<span class="title-order-status">Processando pedido</span>
 				</li>
@@ -123,7 +123,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		
 			case 'Pedido em transporte' : ?>
 				<ul class="navigation-status">
-					<li class="order-status-payment-pending active">
+					<li class="order-status-payment-pending">
 						<img class="img-responsive" src="<?php echo $template_url ?>/images/order-status-payment-pending.png"/>
 						<span class="title-order-status">Pagamento pendente</span>
 					</li>
@@ -135,7 +135,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<img class="img-responsive" src="<?php echo $template_url ?>/images/order-status-processing.png"/>
 						<span class="title-order-status">Processando pedido</span>
 					</li>
-					<li class="order-status-shipping">
+					<li class="order-status-shipping active">
 						<img class="img-responsive" src="<?php echo $template_url ?>/images/order-status-shipping.png"/>
 						<span class="title-order-status">Pedido em transporte</span>
 					</li>
@@ -164,7 +164,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<img class="img-responsive" src="<?php echo $template_url ?>/images/order-status-shipping.png"/>
 						<span class="title-order-status">Pedido em transporte</span>
 					</li>
-					<li class="order-status-complete">
+					<li class="order-status-complete active">
 						<img class="img-responsive" src="<?php echo $template_url ?>/images/order-status-complete.png"/>
 						<span class="title-order-status">Pedido concluído</span>
 					</li>
