@@ -4293,6 +4293,8 @@ d.parent(".dropdown-menu").length&&(d=d.closest("li.dropdown").addClass("active"
 
 	  $(document).ready(function() {
 		$(".wc-default-select").select2();
+				$(".gfield_select").select2();
+
 		$("#calc_shipping_state").select2();
 		$('.dropdown-toggle').dropdown();
 		$('.#kudobuzz_slider_widget button').attr('style', 'height:40px');

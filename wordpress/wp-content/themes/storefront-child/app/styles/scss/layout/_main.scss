@@ -448,6 +448,22 @@ body {
     border-radius: 10px;
 }
 
+.contato .ginput_container{
+	border-bottom : 1px dashed #f3f3f4;
+	margin-bottom : 20px;
+	padding-bottom :20px;
+}
+.contato .gform_footer .button {
+padding: 10px !important;
+    width: 100% !important;
+    border-radius: 10px !important;
+    border: 0px !important;
+    text-transform: uppercase !important;
+    color: #fff !important;
+    background: #b74164 !important;
+    border-bottom: 5px solid #88374f !important; 
+    }
+
 .ginput_container_text input[type="text"],
 .ginput_container_email input[type="text"],
 .ginput_container_email input[type="email"],
