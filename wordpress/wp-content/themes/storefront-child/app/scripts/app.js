@@ -4298,18 +4298,18 @@ d.parent(".dropdown-menu").length&&(d=d.closest("li.dropdown").addClass("active"
 		$('.dropdown-toggle').dropdown();
 		$('.#kudobuzz_slider_widget button').attr('style', 'height:40px');
 
-		$(".input-more").click(function(){
-			alert('teste');
+		$(".input-more").click(function(e){
 			$qty = $('.qty').val();
 			$qty = $qty + 1;
 			$('.qty').val($qty);
+			e.preventDefault();
 		});
 
-		$(".input-minus").click(function(){
-			alert('teste');
+		$(".input-minus").click(function(e){
 			$qty = $('.qty').val();
 			$qty = $qty - 1;
 			$('.qty').val($qty);
+			e.preventDefault();
 		});
 	  });
 	  
